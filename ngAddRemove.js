@@ -4,39 +4,39 @@
     .run(['$templateCache',
       function($templateCache) {
         var addRemoveHtml =
-          "<div class='ngAddRemove container'>" +
+          "<div class='ngAddRemove container' style='margin-left: 0;' ng-style='containerStyle'>" +
           "<div style='float:left; width:40%'>" +
-          "<div ng-class='panelClass'>" +
-          "<div class='panel-heading'><b>Available</b></div>" +
-          "<select size='9' style='width: 100%;height: 144px; vertical-align: top;' ng-model='leftMouseSelectedItems' ng-options='{{leftSelectNgOption}}' ng-dblclick='addItemsToRight()' multiple></select>" +
+          "<div ng-style='panelCssStyle' ng-class='panelClass' class='panel'>" +
+          "<div class='panel-heading' ng-style='panelCssStyle' ng-class='panelClass'><b><span ng-bind='availableText'></span></b></div>" +
+          "<select size='9' ng-style='dropdownStyle' style='width: 100%; vertical-align: top; color: black;' ng-model='leftMouseSelectedItems' ng-options='{{leftSelectNgOption}}' ng-dblclick='addItemsToRight()' multiple></select>" +
           "</div>" +
           "</div>" +
           "<div style='display: inline-block; width: 20%; text-align: center'>" +
           "<br/>" +
-          "<button ng-click='addItemsToRight()' ng-class='buttonClass' style='width:60px; height: 34px; line-height: 17px; vertical-align:middle;outline:none !important;margin-bottom:7px'><span style='font-size:25px;'>&#8594;</span>" +
+          "<button ng-click='addItemsToRight()' ng-class='buttonClass' ng-style='buttonCssStyle' class='btn' style='width:60px; height: 34px; line-height: 17px; vertical-align:middle;outline:none !important;margin-bottom:7px'><span style='font-size:25px;'>&#8594;</span>" +
           "</button>" +
           "<br/>" +
-          "<button ng-click='addItemsToLeft()' ng-class='buttonClass' style='width:60px; height: 34px; line-height: 17px; vertical-align:middle;outline:none !important;margin-bottom:7px'><span style='font-size:25px;'>&#8592;</span>" +
+          "<button ng-click='addItemsToLeft()' ng-class='buttonClass' ng-style='buttonCssStyle' class='btn' style='width:60px; height: 34px; line-height: 17px; vertical-align:middle;outline:none !important;margin-bottom:7px'><span style='font-size:25px;'>&#8592;</span>" +
           "</button>" +
           "<br/>" +
-          "<button ng-click='addAllItemsToRight()' ng-class='buttonClass' style='width:60px; height: 34px; line-height: 17px; vertical-align:middle;outline:none !important;margin-bottom:7px'><span style='font-size:30px;'>&#8649;</span>" +
+          "<button ng-click='addAllItemsToRight()' ng-class='buttonClass' ng-style='buttonCssStyle' class='btn' style='width:60px; height: 34px; line-height: 17px; vertical-align:middle;outline:none !important;margin-bottom:7px'><span style='font-size:30px;'>&#8649;</span>" +
           "</button>" +
           "<br/>" +
-          "<button ng-click='addAllItemsToLeft()' ng-class='buttonClass' style='width:60px; height: 34px; line-height: 17px; vertical-align:middle;outline:none !important;margin-bottom:7px'><span style='font-size:30px;'>&#8647;</span>" +
+          "<button ng-click='addAllItemsToLeft()' ng-class='buttonClass' ng-style='buttonCssStyle' class='btn' style='width:60px; height: 34px; line-height: 17px; vertical-align:middle;outline:none !important;margin-bottom:7px'><span style='font-size:30px;'>&#8647;</span>" +
           "</button>" +
           "<br/>" +
           "</div>" +
           "<div style='float: right; width: 40%'>" +
-          "<div ng-class='panelClass'>" +
-          "<div class='panel-heading'><b>Selected</b></div>" +
-          "<select size='9' style='width: 100%; height: 144px; vertical-align: top;' id='selectedlist' ng-model='rightMouseSelectedItems' ng-options='{{rightSelectNgOption}}' ng-dblclick='addItemsToLeft()' multiple></select>" +
+          "<div ng-style='panelCssStyle' ng-class='panelClass' class='panel'>" +
+          "<div class='panel-heading' ng-style='panelCssStyle' ng-class='panelClass'><b><span ng-bind='selectedText'></span></b></div>" +
+          "<select size='9' ng-style='dropdownStyle' style='width: 100%; vertical-align: top; color: black;' id='selectedlist' ng-model='rightMouseSelectedItems' ng-options='{{rightSelectNgOption}}' ng-dblclick='addItemsToLeft()' multiple></select>" +
           "</div>" +
-          "<div style='float: right; width: 40%;'>" +
-          "<button ng-click='addItemsToDown()' ng-class='buttonClass' style='width:60px; height: 34px; line-height: 17px; vertical-align:middle;outline:none !important;margin-bottom:7px'><span style='font-size:25px;'>&#8595;</span>" +
+          "<div style='float: left; margin-left:20%;'>" +
+          "<button ng-click='addItemsToTop()' ng-class='buttonClass' ng-style='buttonCssStyle' class='btn' style='width:60px; height: 34px; line-height: 17px; vertical-align:middle;outline:none !important;margin-bottom:7px'><span style='font-size:25px;'>&#8593;</span>" +
           "</button>" +
           "</div>" +
-          "<div style='float: right; width: 40%;'>" +
-          "<button ng-click='addItemsToTop()' ng-class='buttonClass' style='width:60px; height: 34px; line-height: 17px; vertical-align:middle;outline:none !important;margin-bottom:7px'><span style='font-size:25px;'>&#8593;</span>" +
+          "<div style='float: right; margin-right:20%'>" +
+          "<button ng-click='addItemsToDown()' ng-class='buttonClass' ng-style='buttonCssStyle' class='btn' style='width:60px; height: 34px; line-height: 17px; vertical-align:middle;outline:none !important;margin-bottom:7px'><span style='font-size:25px;'>&#8595;</span>" +
           "</button>" +
           "</div>" +
           "</div>" +
@@ -51,33 +51,41 @@
         restrict: 'E',
         replace: true,
         scope: {
-          selectedListItems: "=selected",
-          availableListItems: "=available",
+          selectedListItems: "=selectedList",
+          availableListItems: "=availableList",
           key: "@key",
-          panelColor: "@panelColor",
-          buttonColor: "@buttonColor",
           buttonStyle: "@buttonStyle",
-          panelStyle: "@panelStyle"
+          panelStyle: "@panelStyle",
+          height: "@height",
+          width: "@width",
+          availableLabel: "@availableLabel",
+          selectedLabel: "@selectedLabel"
         },
         templateUrl: 'addRemove.html',
         compile: function(tElem, tAttrs) {
           return {
             pre: function(scope, iElem, iAttrs) {
+              scope.availableText = angular.isUndefined(scope.availableLabel) ? 'Available' : scope.availableLabel;
+              scope.selectedText = angular.isUndefined(scope.selectedLabel) ? 'Selected' : scope.selectedLabel;
+              scope.height = angular.isUndefined(scope.height) ? '144px' : scope.height;
+              scope.width = angular.isUndefined(scope.width) ? '80%' : scope.width;
+
+              scope.buttonStyle = angular.isUndefined(scope.buttonStyle) ? 'alpha' : scope.buttonStyle;
+              scope.buttonClass = getColor(scope.buttonStyle, 'button');
+
+              scope.panelStyle = angular.isUndefined(scope.panelStyle) ? 'alpha' : scope.panelStyle;
+              scope.panelClass = getColor(scope.panelStyle, 'panel');
 
               scope.leftMouseSelectedItems = [];
               scope.rightMouseSelectedItems = [];
 
-              if (scope.buttonStyle === undefined) {
-                setButtonColor(scope.buttonColor);
-              } else {
-                scope.buttonClass = scope.buttonStyle;
-              }
+              scope.dropdownStyle = {
+                height: scope.height
+              };
 
-              if (scope.panelStyle === undefined) {
-                setPanelColor(scope.panelColor);
-              } else {
-                scope.panelClass = scope.panelStyle;
-              }
+              scope.containerStyle = {
+                width: scope.width
+              };
 
               if (scope.availableListItems[0] instanceof Object) {
                 scope.leftSelectNgOption = "item as item." + scope.key + " for item in availableListItems | orderBy:'" + scope.key + "'";
@@ -89,82 +97,34 @@
                 scope.availableListItems = getUnique(scope.availableListItems);
               }
 
-              function setButtonColor(color) {
-                switch (color) {
-                  case 'white':
-                    scope.buttonClass = {
-                      'btn btn-default': true
-                    };
-                    break;
-                  case 'blue':
-                    scope.buttonClass = {
-                      'btn btn-primary': true
-                    };
-                    break;
-                  case 'green':
-                    scope.buttonClass = {
-                      'btn btn-success': true
-                    };
-                    break;
-                  case 'lightblue':
-                    scope.buttonClass = {
-                      'btn btn-info': true
-                    };
-                    break;
-                  case 'orange':
-                    scope.buttonClass = {
-                      'btn btn-warning': true
-                    };
-                    break;
-                  case 'red':
-                    scope.buttonClass = {
-                      'btn btn-danger': true
-                    };
-                    break;
-                  default:
-                    scope.buttonClass = {
-                      'btn btn-primary': true
-                    };
+              function getColor(colorClass, type) {
+                var data = {}, color = {};
+                switch (colorClass) {
+                    case 'pearl':
+                        type === 'button' ? (data['btn-default'] = true) : (data['panel-default'] = true);
+                        break;
+                    case 'blue':
+                        type === 'button' ? (data['btn-primary'] = true) : (data['panel-primary'] = true);
+                        break;
+                    case 'alpha':
+                        color = {};
+                        color['background-color'] = 'hsl(193, 32%, 49%) !important';color['background-repeat'] = 'repeat-x';color['filter'] = 'progid:DXImageTransform.Microsoft.gradient(startColorstr="#b8d3da", endColorstr="#5493a4")';color['background-image'] = '-khtml-gradient(linear, left top, left bottom, from(#b8d3da), to(#5493a4))';color['background-image'] = '-moz-linear-gradient(top, #b8d3da, #5493a4)';color['background-image'] = '-ms-linear-gradient(top, #b8d3da, #5493a4)';color['background-image'] = '-webkit-gradient(linear, left top, left bottom, color-stop(0%, #b8d3da), color-stop(100%, #5493a4))';color['background-image'] = '-webkit-linear-gradient(top, #b8d3da, #5493a4)';color['background-image'] = '-o-linear-gradient(top, #b8d3da, #5493a4)';color['background-image'] = 'linear-gradient(#b8d3da, #5493a4)';color['border-color'] = '#5493a4 #5493a4 hsl(193, 32%, 41.5%)';color['color'] = '#333 !important';color['text-shadow'] = '0 1px 1px rgba(255, 255, 255, 0.49)';color['-webkit-font-smoothing'] = 'antialiased';
+                        type === 'button' ? (scope.buttonCssStyle = color) : (scope.panelCssStyle = color);
+                        break;
+                    case 'sand':
+                        color = {};
+                        color['background-color'] = 'hsl(33, 32%, 49%) !important';color['background-repeat'] = 'repeat-x';color['filter'] = 'progid:DXImageTransform.Microsoft.gradient(startColorstr="#dacbb8", endColorstr="#a48054")';color['background-image'] = '-khtml-gradient(linear, left top, left bottom, from(#dacbb8), to(#a48054))';color['background-image'] = '-moz-linear-gradient(top, #dacbb8, #a48054)';color['background-image'] = '-ms-linear-gradient(top, #dacbb8, #a48054)';color['background-image'] = '-webkit-gradient(linear, left top, left bottom, color-stop(0%, #dacbb8), color-stop(100%, #a48054))';color['background-image'] = '-webkit-linear-gradient(top, #dacbb8, #a48054)';color['background-image'] = '-o-linear-gradient(top, #dacbb8, #a48054)';color['background-image'] = 'linear-gradient(#dacbb8, #a48054)';color['border-color'] = '#a48054 #a48054 hsl(33, 32%, 41.5%)';color['color'] = '#333 !important';color['text-shadow'] = '0 1px 1px rgba(255, 255, 255, 0.49)';color['-webkit-font-smoothing'] = 'antialiased';
+                        type === 'button' ? (scope.buttonCssStyle = color) : (scope.panelCssStyle = color);
+                        break;                                    
+                    case 'olive':
+                        color = {};
+                        color['background-color'] = 'hsl(89, 32%, 49%) !important';color['background-repeat'] = 'repeat-x';color['filter'] = 'progid:DXImageTransform.Microsoft.gradient(startColorstr="#cadab8", endColorstr="#7ea454")';color['background-image'] = '-khtml-gradient(linear, left top, left bottom, from(#cadab8), to(#7ea454))';color['background-image'] = '-moz-linear-gradient(top, #cadab8, #7ea454)';color['background-image'] = '-ms-linear-gradient(top, #cadab8, #7ea454)';color['background-image'] = '-webkit-gradient(linear, left top, left bottom, color-stop(0%, #cadab8), color-stop(100%, #7ea454))';color['background-image'] = '-webkit-linear-gradient(top, #cadab8, #7ea454)';color['background-image'] = '-o-linear-gradient(top, #cadab8, #7ea454)';color['background-image'] = 'linear-gradient(#cadab8, #7ea454)';color['border-color'] = '#7ea454 #7ea454 hsl(89, 32%, 41.5%)';color['color'] = '#333 !important';color['text-shadow'] = '0 1px 1px rgba(255, 255, 255, 0.49)';color['-webkit-font-smoothing'] = 'antialiased';
+                        type === 'button' ? (scope.buttonCssStyle = color) : (scope.panelCssStyle = color);
+                        break;
+                    default:
+                        data[colorClass] = true;
                 }
-              }
-
-              function setPanelColor(color) {
-                switch (color) {
-                  case 'white':
-                    scope.panelClass = {
-                      'panel panel-default': true
-                    };
-                    break;
-                  case 'blue':
-                    scope.panelClass = {
-                      'panel panel-primary': true
-                    };
-                    break;
-                  case 'green':
-                    scope.panelClass = {
-                      'panel panel-success': true
-                    };
-                    break;
-                  case 'lightblue':
-                    scope.panelClass = {
-                      'panel panel-info': true
-                    };
-                    break;
-                  case 'orange':
-                    scope.panelClass = {
-                      'panel panel-warning': true
-                    };
-                    break;
-                  case 'red':
-                    scope.panelClass = {
-                      'panel panel-danger': true
-                    };
-                    break;
-                  default:
-                    scope.panelClass = {
-                      'panel panel-primary': true
-                    };
-                }
+                return data;
               }
 
               function getUnique(array, key) {
@@ -194,97 +154,94 @@
               }
 
               scope.addItemsToRight = function() {
-                angular.forEach(scope.leftMouseSelectedItems, function(value, key) {
-                  this.push(value);
-                }, scope.selectedListItems);
-                angular.forEach(scope.leftMouseSelectedItems, function(value, key) {
-                  for (var i = scope.availableListItems.length - 1; i >= 0; i--) {
+                angular.forEach(scope.leftMouseSelectedItems, function(leftMouseSelectedItem, key) {
+                  scope.selectedListItems.push(leftMouseSelectedItem);
+                });
+
+                angular.forEach(scope.leftMouseSelectedItems, function(leftMouseSelectedItem, key) {
+                  angular.forEach(scope.availableListItems, function(availableListItem, index) {
                     if (scope.availableListItems[0] instanceof Object) {
-                      if (scope.availableListItems[i][scope.key] == value[scope.key]) {
-                        scope.availableListItems.splice(i, 1);
+                      if (availableListItem[scope.key] == leftMouseSelectedItem[scope.key]) {
+                        scope.availableListItems.splice(index, 1);
                       }
                     } else {
-                      if (scope.availableListItems[i] == value) {
-                        scope.availableListItems.splice(i, 1);
+                      if (availableListItem == leftMouseSelectedItem) {
+                        scope.availableListItems.splice(index, 1);
                       }
                     }
-                  }
+                  });
                 });
                 scope.leftMouseSelectedItems = [];
                 orderSelections();
               };
 
               scope.addAllItemsToRight = function() {
-                angular.forEach(scope.availableListItems, function(value, key) {
-                  this.push(value);
-                }, scope.selectedListItems);
-                for (var i = scope.availableListItems.length - 1; i >= 0; i--) {
-                  scope.availableListItems.splice(i, 1);
-                }
+                angular.forEach(scope.availableListItems, function(availableListItem, key) {
+                  scope.selectedListItems.push(availableListItem);
+                });
+
+                scope.availableListItems = [];
+                scope.leftMouseSelectedItems = [];
                 orderSelections();
               };
 
               scope.addItemsToLeft = function() {
-                angular.forEach(scope.rightMouseSelectedItems, function(value, key) {
-                  this.push(value);
-                }, scope.availableListItems);
-                angular.forEach(scope.rightMouseSelectedItems, function(value, key) {
-                  for (var i = scope.selectedListItems.length - 1; i >= 0; i--) {
+                angular.forEach(scope.rightMouseSelectedItems, function(rightMouseSelectedItem, key) {
+                  scope.availableListItems.push(rightMouseSelectedItem);
+                });
+
+                angular.forEach(scope.rightMouseSelectedItems, function(rightMouseSelectedItem, key) {
+                  angular.forEach(scope.selectedListItems, function(selectedListItem, index) {
                     if (scope.availableListItems[0] instanceof Object) {
-                      if (scope.selectedListItems[i][scope.key] == value[scope.key]) {
-                        scope.selectedListItems.splice(i, 1);
+                      if (selectedListItem[scope.key] == rightMouseSelectedItem[scope.key]) {
+                        scope.selectedListItems.splice(index, 1);
                       }
                     } else {
-                      if (scope.selectedListItems[i] == value) {
-                        scope.selectedListItems.splice(i, 1);
+                      if (selectedListItem == rightMouseSelectedItem) {
+                        scope.selectedListItems.splice(index, 1);
                       }
                     }
-                  }
+                  });
                 });
                 scope.rightMouseSelectedItems = [];
               };
 
               scope.addAllItemsToLeft = function() {
-                angular.forEach(scope.selectedListItems, function(value, key) {
-                  this.push(value);
-                }, scope.availableListItems);
-                for (var i = scope.selectedListItems.length - 1; i >= 0; i--) {
-                  scope.selectedListItems.splice(i, 1);
-                }
+                angular.forEach(scope.selectedListItems, function(selectedListItem, key) {
+                  scope.availableListItems.push(selectedListItem);
+                });
+
+                scope.selectedListItems = [];
                 scope.rightMouseSelectedItems = [];
               };
 
               scope.addItemsToTop = function() {
-                var prevIdx = -1;
-                var person = scope.rightMouseSelectedItems.concat();
-                for (var i = 0; i < scope.rightMouseSelectedItems.length; i++) {
-                  var idx = scope.selectedListItems.indexOf(scope.rightMouseSelectedItems[i])
-                  if (idx - 1 === prevIdx) {
-                    prevIdx = idx
-                  } else if (idx > 0) {
-                    var itemToMove = scope.selectedListItems.splice(idx, 1)
-                    scope.selectedListItems.splice(idx - 1, 0, itemToMove[0]);
+                var prevIndex = -1;
+                angular.forEach(scope.rightMouseSelectedItems, function(rightMouseSelectedItem, key) {
+                  var itemIndex = scope.selectedListItems.indexOf(rightMouseSelectedItem);
+                  if (itemIndex - 1 === prevIndex) {
+                    prevIndex = itemIndex;
+                  } else if (itemIndex > 0) {
+                    var itemToMove = scope.selectedListItems.splice(itemIndex, 1);
+                    scope.selectedListItems.splice(itemIndex - 1, 0, itemToMove[0]);
                   }
-                }
+                });
               };
 
               scope.addItemsToDown = function() {
-                var prevIdx = scope.selectedListItems.length;
-                var revPerson = scope.rightMouseSelectedItems.concat();
-                revPerson.reverse();
-                for (var i = 0; i < revPerson.length; i++) {
-                  var idx = scope.selectedListItems.indexOf(revPerson[i])
-                  if (idx + 1 === prevIdx) {
-                    prevIdx = idx
-                  } else if (idx < scope.selectedListItems.length - 1) {
-                    var itemToMove = scope.selectedListItems.splice(idx, 1)
-                    scope.selectedListItems.splice(idx + 1, 0, itemToMove[0]);
+                var prevIndex = scope.selectedListItems.length;
+                angular.forEach(scope.rightMouseSelectedItems.reverse(), function(rightMouseSelectedItem, key) {
+                  var itemIndex = scope.selectedListItems.indexOf(rightMouseSelectedItem);
+                  if (itemIndex + 1 === prevIndex) {
+                    prevIndex = itemIndex;
+                  } else if (itemIndex < scope.selectedListItems.length - 1) {
+                    var itemToMove = scope.selectedListItems.splice(itemIndex, 1);
+                    scope.selectedListItems.splice(itemIndex + 1, 0, itemToMove[0]);
                   }
-                }
+                });
               };
-
             }
-          }
+          };
         }
       };
     }
