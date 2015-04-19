@@ -69,20 +69,15 @@
               scope.selectedText = angular.isUndefined(scope.selectedLabel) ? 'Selected' : scope.selectedLabel;
               scope.height = angular.isUndefined(scope.height) ? '144px' : scope.height;
               scope.width = angular.isUndefined(scope.width) ? '80%' : scope.width;
-
               scope.buttonStyle = angular.isUndefined(scope.buttonStyle) ? 'alpha' : scope.buttonStyle;
               scope.buttonClass = getColor(scope.buttonStyle, 'button');
-
               scope.panelStyle = angular.isUndefined(scope.panelStyle) ? 'alpha' : scope.panelStyle;
               scope.panelClass = getColor(scope.panelStyle, 'panel');
-
               scope.leftMouseSelectedItems = [];
               scope.rightMouseSelectedItems = [];
-
               scope.dropdownStyle = {
                 height: scope.height
               };
-
               scope.containerStyle = {
                 width: scope.width
               };
@@ -130,9 +125,9 @@
               function getUnique(array, key) {
                 if (array[0] instanceof Object) {
                   var object = {};
-                  for (var i = 0; i < array.length; i++)
+                  for (var i = 0; i < array.length; i++){
                     object[array[i][key]] = array[i];
-
+                  }
                   array = [];
                   for (var objKey in object) {
                     array.push(object[objKey]);
@@ -157,7 +152,6 @@
                 angular.forEach(scope.leftMouseSelectedItems, function(leftMouseSelectedItem, key) {
                   scope.selectedListItems.push(leftMouseSelectedItem);
                 });
-
                 angular.forEach(scope.leftMouseSelectedItems, function(leftMouseSelectedItem, key) {
                   angular.forEach(scope.availableListItems, function(availableListItem, index) {
                     if (scope.availableListItems[0] instanceof Object) {
@@ -179,7 +173,6 @@
                 angular.forEach(scope.availableListItems, function(availableListItem, key) {
                   scope.selectedListItems.push(availableListItem);
                 });
-
                 scope.availableListItems = [];
                 scope.leftMouseSelectedItems = [];
                 orderSelections();
@@ -189,7 +182,6 @@
                 angular.forEach(scope.rightMouseSelectedItems, function(rightMouseSelectedItem, key) {
                   scope.availableListItems.push(rightMouseSelectedItem);
                 });
-
                 angular.forEach(scope.rightMouseSelectedItems, function(rightMouseSelectedItem, key) {
                   angular.forEach(scope.selectedListItems, function(selectedListItem, index) {
                     if (scope.availableListItems[0] instanceof Object) {
@@ -210,7 +202,6 @@
                 angular.forEach(scope.selectedListItems, function(selectedListItem, key) {
                   scope.availableListItems.push(selectedListItem);
                 });
-
                 scope.selectedListItems = [];
                 scope.rightMouseSelectedItems = [];
               };
