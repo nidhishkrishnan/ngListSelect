@@ -1,14 +1,15 @@
-# ngAddRemove - An AngularJS Bootstrap supported directive for add/remove functionality  
+# ngAddRemove - An Awesome AngularJS Bootstrap supported directive for add/remove functionality  
 
 ## Features
 
 * ngAddRemove Component allows users to select items from a group of available list.
 * Supported both Array of String and Array of Objects.
 * Selection of Items can be either through buttons or item double click.
-* Supports Order of Items under the Selection Block.
-* Supported six In-Built Color.
+* Supports Ordering of Items under the Selection Block.
+* Supported five Built-In Color.
 * Bootstrap supported.
 * Options for Styling Buttons and Panels.
+* Options for changing component width, height and labels of Available & Selection Box. 
 * Works in all modern browsers (IE9+, Chrome, Firefox, Safari etc.)
 
 ## Requirements
@@ -20,6 +21,7 @@
 
 You can download the minified and unminified version manually from CDN
 ```
+<script type="text/javascript" src="https://cdn.rawgit.com/nidhishkrishnan/ngAddRemove/master/ngAddRemove.min.js"></script>
 <script type="text/javascript" src="https://cdn.rawgit.com/nidhishkrishnan/ngAddRemove/master/ngAddRemove.js"></script>
 ```
 Adding `ngAddRemove` Dependency to your app
@@ -29,55 +31,130 @@ angular.module('your-app', ['addRemove']);
 ```
 Use the below syntax in your templates:
 ```
-<ng-add-remove selected="selectedList" available="availableList"></ng-add-remove>
+ <ng-add-remove selected-list="selectedList" width="700px" key="name" available-list="availableList" button-style="olive" panel-style="olive"></ng-add-remove>
 ```
+
+## Five Built-In Flavours
+
+### Alpha (Default)
+![alpha](https://cloud.githubusercontent.com/assets/6831336/7219787/3eba05c0-e6ce-11e4-876b-b296c17694f5.png)
+### Sand
+![sand](https://cloud.githubusercontent.com/assets/6831336/7219776/e68dac58-e6cd-11e4-9435-bfdf4e6c5691.png)
+### Olive
+![olive](https://cloud.githubusercontent.com/assets/6831336/7219778/fe47cb58-e6cd-11e4-8929-81b483b52c28.png)
+### Pearl
+![pearl](https://cloud.githubusercontent.com/assets/6831336/7219780/12a4e8f6-e6ce-11e4-86e0-18e4d6b42946.png)
+### Blue
+![blue](https://cloud.githubusercontent.com/assets/6831336/7219781/2b318974-e6ce-11e4-9e7c-81ad3a691c83.png)
+
+Take a look at this [Demo](http://plnkr.co/edit/VJjqQt4JOk9bEls20UOr?p=preview) 
+
+## Thinking how to Customize, It's Easy!!!
+
+You can customize the styles of add-remove component very easily like as follows:
+
+* Since we are using Bootstrap v3.0+ css for styling purpose, for customising simply go to  [http://charliepark.org/](http://charliepark.org/bootstrap_buttons/)
+* Generate your suitable style.
+* Give a suitable named for the class , let say ```"dark-blue"```.
+* A sample example is shown below which I have created.
+
+```
+.dark-blue {
+  background-color: hsl(205, 28%, 26%) !important;
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#7c9db5", endColorstr="#2f4554");
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#7c9db5), to(#2f4554));
+  background-image: -moz-linear-gradient(top, #7c9db5, #2f4554);
+  background-image: -ms-linear-gradient(top, #7c9db5, #2f4554);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #7c9db5), color-stop(100%, #2f4554));
+  background-image: -webkit-linear-gradient(top, #7c9db5, #2f4554);
+  background-image: -o-linear-gradient(top, #7c9db5, #2f4554);
+  background-image: linear-gradient(#7c9db5, #2f4554);
+  border-color: #2f4554 #2f4554 hsl(205, 28%, 17.5%);
+  color: #fff !important;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.56);
+  -webkit-font-smoothing: antialiased;
+}
+
+.dark-blue .panel-heading
+{
+  color: #fff !important;
+}
+```
+### Dark Blue
+![dark-blue](https://cloud.githubusercontent.com/assets/6831336/7219916/9659948a-e6d3-11e4-8647-2b19ced07cf4.png)
+
+Take a look at this [Working Demo](http://plnkr.co/edit/e0mtaSsP2fLI9PCMuuo2?p=preview)
 
 ## Attributes
 
-#### selected 
-* Accepts Array of String as well as Array of Objects, eg. ```["Apple, Orange"], [{name: "Apple"}, {name: "Orange"}]```
-* For displaying the text for option and option-group
-* Applicable for ```<ng-option>``` and ```<ng-optgroup>```
-* Example: For optgroup ```<ng-optgroup label="- - Select your choice - -">``` and for
- option ```<ng-option label="Cat">```
+#### availableList (required)
+* Accepts **Array of String** as well as **Array of Objects**, but supports either one, which should be matched to ```selectedList```, eg. ```["Apple, Orange"]``` or ```[{name: "Apple"...}, {name: "Orange"...}]```.
+*  Used for displaying available detail list under the left Available box which is used for selection.
+* Should not be empty.
+* Supports two way binding.
+* Should be detoted as ```available-list```.
+* Example for availableList : ```<ng-add-remove available-list="yourAvailableList"... ```.
 
-#### value 
-* Accepts String value, eg. "cat"
-* For assigning value for option and option-group
-* Applicable for ```<ng-option>``` and ```<ng-optgroup>```
-* Example: For optgroup ```<ng-optgroup value="0" ...``` and for
- option ```<ng-option value="cat" ...```
+#### selectedList (required)
+* Accepts **Array of String** as well as **Array of Objects**, but supports either one, which should be matched to ```availableList```, eg. ```["Apple, Orange"]``` or ```[{name: "Apple"...}, {name: "Orange"...}]```.
+* Used for displaying selection list under the right Selection box.
+* Can be empty.
+* Supports two way binding.
+* Should be detoted as ```selected-list```.
+* Example for selectedList : ```<ng-add-remove selected-list="yourSelectedList"... ```.
+
+
+#### key (optional)
+* Accepts String value, eg. ```name```.
+* In the case if user is using **Array of Objects** in ```selectedList```, then the appropriate key should be mentioned to display its values. eg. if it is ```[{name: "Apple"...}, {name: "Orange"...}]``` then if ```"name"``` is given as key value, then it will shows ```Apple```, ```Orange``` within the box.
+* Example for key : ```<ng-add-remove selected-list="yourSelectedList" key="yourKey"... ```.
+
+#### buttonStyle (optional)
+* Accepts string value, eg. ```"olive"```, ```"red"```.
+* Used for customizing the styles of buttons, user can pass the customized css class or in-built style values for ```buttonStyle``` to style the buttons.
+* Should be detoted as ```button-style```.
+* Has five built-in styles (```pearl, blue, alpha, sand, olive```), ```alpha``` is the default style.
+* Example for buttonStyle : ```<ng-add-remove button-style="alpha"... ```.
+
+#### panelStyle (optional)
+* Accepts string value, eg. ```"olive"```, ```"red"```.
+* Used for customizing the styles of panel boxes (**Available** and **Selected**), user can pass the customized css class or in-built style values for ```panelStyle``` to style the panels.
+* Should be detoted as ```panel-style```.
+* Has five built-in styles (```pearl, blue, alpha, sand, olive```), ```alpha``` is the default style.
+* Example for panelStyle : ```<ng-add-remove panel-style="alpha"... ```.
 
 #### width (optional)
-* Accepts String value, eg. 150px
-* For increasing the width of the select box
-* Applicable for ```<ng-select-box>``` only
-* Example: ```<ng-select-box width="150px"...```
+* Accepts string value, eg. ```"700px"```.
+* Used for changing the width of the ```add-remove``` component.
+* Default width is ```"144px"```.
+* Example for width : ```<ng-add-remove width="800px"... ```.
 
-#### selected (optional) 
-* Accepts bollean value, eg. true or false
-* For selecting a particular option or option-group
-* Applicable for ```<ng-option>``` and ```<ng-optgroup>```
-* Example: For optgroup ```<ng-optgroup selected="true" ...``` and for
- option ```<ng-option selected="true" ...```
+#### height (optional)
+* Accepts string value, eg. ```"700px"```.
+* Used for changing the height of the ```add-remove``` component.
+* Default height is ```"80%"```.
+* Example for height : ```<ng-add-remove height="800px"... ```.
 
-#### image (optional) 
-* Accepts String value, eg. "cat.png"
-* For adding images for a particular option or option-group
-* Applicable for ```<ng-option>``` and ```<ng-optgroup>```
-* Example: For optgroup ```<ng-optgroup image="cat.png" ...``` and for
- option ```<ng-option image="cat.png" ...```
+#### availableLabel (optional)
+* Accepts string value, eg. ```"Available Peoples"```.
+* Used for changing the label of the **Available Box**.
+* Default label is ```"Available"```.
+* Should be detoted as ```available-label```.
+* Example for availableLabel : ```<ng-add-remove available-label="Available Peoples"... ```.
 
-#### text-color (optional) 
-* Accepts String value, eg. "red"
-* For applying colors for a particular option text or option-group text
-* Applicable for ```<ng-option>``` and ```<ng-optgroup>```
-* Example: For optgroup ```<ng-optgroup text-color="red" ...``` and for
- option ```<ng-option text-color="red" ...```
+#### selectedLabel (optional)
+* Accepts string value, eg. ```"Selected Peoples"```.
+* Used for changing the label of the **Selected Box**.
+* Default label is ```"Selected"```.
+* Should be detoted as ```selected-label```.
+* Example for selectedLabel : ```<ng-add-remove selected-label="Selected Peoples"... ```.
 
 ## Working Demo
 
 Try out the demo :
-[Demo](http://plnkr.co/edit/kjsK8kIS1cTWrlCOEclZ?p=preview)  
+[Demo](http://plnkr.co/edit/9HqWkBOO4RoIoAk4kl7i?p=preview) 
+
+
 
 
