@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://code.angularjs.org/1.2.16/angular.js"></script>
+    <script type="text/javascript" src="https://cdn.rawgit.com/nidhishkrishnan/ngAddRemove/master/ngAddRemove.js"></script>
+    <link data-require="bootstrap-css@3.3.1" data-semver="3.3.1" rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+</head>
+
+<body ng-app="app">
+    <div ng-controller="MainCtrl">
+        <br/>
+        <ng-add-remove selected-list="selectedList" width="700px" key="name" available-list="availableList"></ng-add-remove>
+        <br/>
+        <br/>
+        <b>availableList::</b>{{availableList | json}}
+        <br />
+        <b>selectedList::</b>{{selectedList| json}}
+    </div>
+</body>
+<script>
+angular.module('app', ['addRemove'])
+    .controller('MainCtrl', function($scope) {
+          $scope.availableList = [{name: "Nidhish", email: "nidhish@gmail.com"},
+                                  {name: "John", email: "john@gmail.com"}, 
+                                  {name: "Avinash", email: "avinash@gmail.com"},
+                                  {name:"Priya", email: "priya@gmail.com"}, 
+                                  {name:"Anu", email: "anu@gmail.com"}, 
+                                  {name:"Manu", email: "manu@gmail.com"}];
+          $scope.selectedList = [];
+    });
+</script>
+</html>
