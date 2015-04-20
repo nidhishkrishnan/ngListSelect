@@ -90,7 +90,7 @@ Take a look at this [Working Demo](http://plnkr.co/edit/cU1efOxfqmJ26TOrye1A?p=p
 
 ## Want to use it inside a modal popup
 
-* Take a look this [Demo](http://embed.plnkr.co/2mPahG5v0R1nDOZ0nkjA/preview)
+* Take a look this [Demo](http://embed.plnkr.co/Lw8lAS2NwQMDQgHjYBEo/preview)
 
 ## Attributes
 
@@ -161,7 +161,7 @@ Take a look at this [Working Demo](http://plnkr.co/edit/cU1efOxfqmJ26TOrye1A?p=p
 * ngAddRemove Demo :[Demo](http://embed.plnkr.co/EowRjzQgceIQMYUEs87M/) 
 * ngAddRemove Five Flavours - [Demo](http://embed.plnkr.co/n3s0ThH5ucTpNkFBwepW/)
 * ngAddRemove Custom ```ghost``` Theme - [Demo](http://embed.plnkr.co/cU1efOxfqmJ26TOrye1A/)
-* ngAddRemove in modal popup - [Demo](http://embed.plnkr.co/2mPahG5v0R1nDOZ0nkjA/preview)
+* ngAddRemove in modal popup - [Demo](http://embed.plnkr.co/Lw8lAS2NwQMDQgHjYBEo/preview)
 
 ## Contributions
 
