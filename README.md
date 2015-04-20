@@ -80,7 +80,9 @@ You can customize the styles of add-remove component very easily like as follows
 }
 ```
 * Use the ```ghost``` theme in template like as shown below
+ 
 ```<ng-add-remove button-style="ghost" panel-style="ghost" selected-list="selectedList" width="700px" key="name" available-list="availableList"></ng-add-remove>``` 
+
 ### Ghost
 ![ghost](https://cloud.githubusercontent.com/assets/6831336/7219916/9659948a-e6d3-11e4-8647-2b19ced07cf4.png)
 
