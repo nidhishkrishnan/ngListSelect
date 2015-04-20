@@ -88,6 +88,10 @@ You can customize the styles of add-remove component very easily like as follows
 
 Take a look at this [Working Demo](http://plnkr.co/edit/cU1efOxfqmJ26TOrye1A?p=preview)
 
+## Want to use it inside a modal popup
+
+* Take a look this [Demo](http://embed.plnkr.co/2mPahG5v0R1nDOZ0nkjA/preview)
+
 ## Attributes
 
 #### availableList (required)
@@ -154,6 +158,8 @@ Take a look at this [Working Demo](http://plnkr.co/edit/cU1efOxfqmJ26TOrye1A?p=p
 
 ## Working Demo
 
-Try out the demo :
-[Demo](http://plnkr.co/edit/EowRjzQgceIQMYUEs87M?p=preview) 
+* ngAddRemove Demo :[Demo](http://embed.plnkr.co/EowRjzQgceIQMYUEs87M/) 
+* ngAddRemove Five Flavours - [Demo](http://embed.plnkr.co/n3s0ThH5ucTpNkFBwepW/)
+* ngAddRemove Custom ```ghost``` Theme - [Demo](http://embed.plnkr.co/cU1efOxfqmJ26TOrye1A/)
+* ngAddRemove in modal popup - [Demo](http://embed.plnkr.co/2mPahG5v0R1nDOZ0nkjA/preview)
 
