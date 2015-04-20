@@ -93,7 +93,7 @@ angular.module('your-app', ['addRemove']);
 
 <p><img src="https://cloud.githubusercontent.com/assets/6831336/7219781/2b318974-e6ce-11e4-9e7c-81ad3a691c83.png" alt="blue"></p>
 
-<p>Take a look at this <a href="http://plnkr.co/edit/VJjqQt4JOk9bEls20UOr?p=preview">Demo</a> </p>
+<p>Take a look at this <a href="http://plnkr.co/edit/n3s0ThH5ucTpNkFBwepW?p=preview">Demo</a> </p>
 
 <h2>
 <a id="thinking-how-to-customize-its-easy" class="anchor" href="#thinking-how-to-customize-its-easy" aria-hidden="true"><span class="octicon octicon-link"></span></a>Thinking how to Customize, It's Easy!!!</h2>
@@ -104,14 +104,14 @@ angular.module('your-app', ['addRemove']);
 <li>Since we are using Bootstrap v3.0+ css for styling purpose, for customising simply go to  <a href="http://charliepark.org/bootstrap_buttons/">http://charliepark.org/</a>
 </li>
 <li>Generate your suitable style.</li>
-<li>Give a suitable named for the class , let say <code>"dark-blue"</code>.</li>
+<li>Give a suitable named for the class , let say <code>"ghost"</code>.</li>
 <li>A sample example is shown below which I have created.</li>
 </ul>
 
-<pre><code>.dark-blue {
+<pre><code>.ghost {
   background-color: hsl(205, 28%, 26%) !important;
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#7c9db5", endColorstr="#2f4554");
+  filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#7c9db5", endColorstr="#2f4554");
   background-image: -khtml-gradient(linear, left top, left bottom, from(#7c9db5), to(#2f4554));
   background-image: -moz-linear-gradient(top, #7c9db5, #2f4554);
   background-image: -ms-linear-gradient(top, #7c9db5, #2f4554);
@@ -124,19 +124,23 @@ angular.module('your-app', ['addRemove']);
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.56);
   -webkit-font-smoothing: antialiased;
 }
-
-.dark-blue .panel-heading
-{
+.ghost .panel-heading {
   color: #fff !important;
 }
 </code></pre>
 
+<ul>
+<li>Use the <code>ghost</code> theme in template like as shown below</li>
+</ul>
+
+<p><code>&lt;ng-add-remove button-style="ghost" panel-style="ghost" selected-list="selectedList" width="700px" key="name" available-list="availableList"&gt;&lt;/ng-add-remove&gt;</code> </p>
+
 <h3>
-<a id="dark-blue" class="anchor" href="#dark-blue" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dark Blue</h3>
+<a id="ghost" class="anchor" href="#ghost" aria-hidden="true"><span class="octicon octicon-link"></span></a>Ghost</h3>
 
-<p><img src="https://cloud.githubusercontent.com/assets/6831336/7219916/9659948a-e6d3-11e4-8647-2b19ced07cf4.png" alt="dark-blue"></p>
+<p><img src="https://cloud.githubusercontent.com/assets/6831336/7219916/9659948a-e6d3-11e4-8647-2b19ced07cf4.png" alt="ghost"></p>
 
-<p>Take a look at this <a href="http://plnkr.co/edit/e0mtaSsP2fLI9PCMuuo2?p=preview">Working Demo</a></p>
+<p>Take a look at this <a href="http://plnkr.co/edit/cU1efOxfqmJ26TOrye1A?p=preview">Working Demo</a></p>
 
 <h2>
 <a id="attributes" class="anchor" href="#attributes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Attributes</h2>
@@ -242,7 +246,7 @@ angular.module('your-app', ['addRemove']);
 <a id="working-demo" class="anchor" href="#working-demo" aria-hidden="true"><span class="octicon octicon-link"></span></a>Working Demo</h2>
 
 <p>Try out the demo :
-<a href="http://plnkr.co/edit/9HqWkBOO4RoIoAk4kl7i?p=preview">Demo</a> </p>
+<a href="http://plnkr.co/edit/EowRjzQgceIQMYUEs87M?p=preview">Demo</a> </p>
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/nidhishkrishnan/ngAddRemove">ngAddRemove</a> is maintained by <a href="https://github.com/nidhishkrishnan">nidhishkrishnan</a>.</span>
