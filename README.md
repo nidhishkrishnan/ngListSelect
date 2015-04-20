@@ -47,7 +47,7 @@ Use the below syntax in your templates:
 ### Blue
 ![blue](https://cloud.githubusercontent.com/assets/6831336/7219781/2b318974-e6ce-11e4-9e7c-81ad3a691c83.png)
 
-Take a look at this [Demo](http://plnkr.co/edit/VJjqQt4JOk9bEls20UOr?p=preview) 
+Take a look at this [Demo](http://plnkr.co/edit/n3s0ThH5ucTpNkFBwepW?p=preview) 
 
 ## Thinking how to Customize, It's Easy!!!
 
@@ -55,14 +55,14 @@ You can customize the styles of add-remove component very easily like as follows
 
 * Since we are using Bootstrap v3.0+ css for styling purpose, for customising simply go to  [http://charliepark.org/](http://charliepark.org/bootstrap_buttons/)
 * Generate your suitable style.
-* Give a suitable named for the class , let say ```"dark-blue"```.
+* Give a suitable named for the class , let say ```"ghost"```.
 * A sample example is shown below which I have created.
 
 ```
-.dark-blue {
+.ghost {
   background-color: hsl(205, 28%, 26%) !important;
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#7c9db5", endColorstr="#2f4554");
+  filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#7c9db5", endColorstr="#2f4554");
   background-image: -khtml-gradient(linear, left top, left bottom, from(#7c9db5), to(#2f4554));
   background-image: -moz-linear-gradient(top, #7c9db5, #2f4554);
   background-image: -ms-linear-gradient(top, #7c9db5, #2f4554);
@@ -75,16 +75,16 @@ You can customize the styles of add-remove component very easily like as follows
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.56);
   -webkit-font-smoothing: antialiased;
 }
-
-.dark-blue .panel-heading
-{
+.ghost .panel-heading {
   color: #fff !important;
 }
 ```
-### Dark Blue
-![dark-blue](https://cloud.githubusercontent.com/assets/6831336/7219916/9659948a-e6d3-11e4-8647-2b19ced07cf4.png)
+* Use the ```ghost``` theme in template like as shown below
+```<ng-add-remove button-style="ghost" panel-style="ghost" selected-list="selectedList" width="700px" key="name" available-list="availableList"></ng-add-remove>``` 
+### Ghost
+![ghost](https://cloud.githubusercontent.com/assets/6831336/7219916/9659948a-e6d3-11e4-8647-2b19ced07cf4.png)
 
-Take a look at this [Working Demo](http://plnkr.co/edit/e0mtaSsP2fLI9PCMuuo2?p=preview)
+Take a look at this [Working Demo](http://plnkr.co/edit/cU1efOxfqmJ26TOrye1A?p=preview)
 
 ## Attributes
 
@@ -153,8 +153,5 @@ Take a look at this [Working Demo](http://plnkr.co/edit/e0mtaSsP2fLI9PCMuuo2?p=p
 ## Working Demo
 
 Try out the demo :
-[Demo](http://plnkr.co/edit/9HqWkBOO4RoIoAk4kl7i?p=preview) 
-
-
-
+[Demo](http://plnkr.co/edit/EowRjzQgceIQMYUEs87M?p=preview) 
 
