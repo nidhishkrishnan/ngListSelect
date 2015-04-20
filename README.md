@@ -163,3 +163,6 @@ Take a look at this [Working Demo](http://plnkr.co/edit/cU1efOxfqmJ26TOrye1A?p=p
 * ngAddRemove Custom ```ghost``` Theme - [Demo](http://embed.plnkr.co/cU1efOxfqmJ26TOrye1A/)
 * ngAddRemove in modal popup - [Demo](http://embed.plnkr.co/2mPahG5v0R1nDOZ0nkjA/preview)
 
+## Contributions
+
+Contributions are very welcome! Please contact me to discuss: nidhishkrishnan@gmail.com
