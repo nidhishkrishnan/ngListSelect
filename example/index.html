@@ -17,9 +17,8 @@
         <br />
         <b>selectedList::</b>{{selectedList| json}}
     </div>
-</body>
-<script>
-angular.module('app', ['addRemove'])
+    <script>
+    angular.module('app', ['addRemove'])
     .controller('MainCtrl', function($scope) {
           $scope.availableList = [{name: "Nidhish", email: "nidhish@gmail.com"},
                                   {name: "John", email: "john@gmail.com"}, 
@@ -30,4 +29,5 @@ angular.module('app', ['addRemove'])
           $scope.selectedList = [];
     });
 </script>
+</body>
 </html>
