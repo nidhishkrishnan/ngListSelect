@@ -1,8 +1,8 @@
-# ngAddRemove - An Awesome AngularJS Bootstrap supported directive for add/remove functionality  
+# ngListSelect - An Awesome AngularJS Bootstrap supported directive for add/remove functionality  
 
 ## Features
 
-* ngAddRemove Component allows users to select items from a group of available list.
+* ngListSelect Component allows users to select items from a group of available list.
 * Supported both Array of String and Array of Objects.
 * Selection of Items can be either through buttons or item double click.
 * Supports Ordering of Items under the Selection Block.
@@ -21,12 +21,12 @@
 
 You can download the minified and unminified version manually from CDN
 ```
-<script type="text/javascript" src="https://cdn.rawgit.com/nidhishkrishnan/ngAddRemove/master/ngAddRemove.min.js"></script>
-<script type="text/javascript" src="https://cdn.rawgit.com/nidhishkrishnan/ngAddRemove/master/ngAddRemove.js"></script>
+<script type="text/javascript" src="https://cdn.rawgit.com/nidhishkrishnan/ngListSelect/master/ngListSelect.min.js"></script>
+<script type="text/javascript" src="https://cdn.rawgit.com/nidhishkrishnan/ngListSelect/master/ngListSelect.js"></script>
 ```
-Adding `ngAddRemove` Dependency to your app
+Adding `ngListSelect` Dependency to your app
 ```
-// Add ngAddRemove as a dependency to your app
+// Add ngListSelect as a dependency to your app
 angular.module('your-app', ['addRemove']);
 ```
 Use the below syntax in your templates:
@@ -158,10 +158,10 @@ Take a look at this [Working Demo](http://plnkr.co/edit/cU1efOxfqmJ26TOrye1A?p=p
 
 ## Working Demo
 
-* ngAddRemove Demo :[Demo](http://embed.plnkr.co/EowRjzQgceIQMYUEs87M/) 
-* ngAddRemove Five Flavours - [Demo](http://embed.plnkr.co/n3s0ThH5ucTpNkFBwepW/)
-* ngAddRemove Custom ```ghost``` Theme - [Demo](http://embed.plnkr.co/cU1efOxfqmJ26TOrye1A/)
-* ngAddRemove in modal popup - [Demo](http://embed.plnkr.co/Lw8lAS2NwQMDQgHjYBEo/preview)
+* ngListSelect Demo :[Demo](http://embed.plnkr.co/EowRjzQgceIQMYUEs87M/) 
+* ngListSelect Five Flavours - [Demo](http://embed.plnkr.co/n3s0ThH5ucTpNkFBwepW/)
+* ngListSelect Custom ```ghost``` Theme - [Demo](http://embed.plnkr.co/cU1efOxfqmJ26TOrye1A/)
+* ngListSelect in modal popup - [Demo](http://embed.plnkr.co/Lw8lAS2NwQMDQgHjYBEo/preview)
 
 ## Contributions
 
