@@ -158,7 +158,7 @@ Take a look at this [Working Demo](http://plnkr.co/edit/uUgARV?p=preview)
 
 ## Working Demo
 
-* ngListSelect Demo :[Demo](http://embed.plnkr.co/W3agWx/preview) 
+* ngListSelect Demo :[Demo](http://embed.plnkr.co/Ert7SV/preview) 
 * ngListSelect Five Flavours - [Demo](http://embed.plnkr.co/W3agWx/preview)
 * ngListSelect Custom ```ghost``` Theme - [Demo](http://embed.plnkr.co/uUgARV/preview)
 * ngListSelect in modal popup - [Demo](http://embed.plnkr.co/9sviu1/preview)
