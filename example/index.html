@@ -3,14 +3,14 @@
 
 <head>
     <script src="https://code.angularjs.org/1.2.16/angular.js"></script>
-    <script type="text/javascript" src="https://cdn.rawgit.com/nidhishkrishnan/ngAddRemove/master/ngAddRemove.js"></script>
-    <link data-require="bootstrap-css@3.3.1" data-semver="3.3.1" rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+    <script type="text/javascript" src="https://cdn.rawgit.com/nidhishkrishnan/ngListSelect/master/ngListSelect.min.js"></script>
+	<link data-require="bootstrap-css@3.3.1" data-semver="3.3.1" rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
 </head>
 
 <body ng-app="app">
     <div ng-controller="MainCtrl">
         <br/>
-        <ng-add-remove selected-list="selectedList" width="700px" key="name" available-list="availableList"></ng-add-remove>
+        <ng-list-select selected-list="selectedList" width="700px" key="name" available-list="availableList"></ng-list-select>
         <br/>
         <br/>
         <b>availableList::</b>{{availableList | json}}
@@ -18,7 +18,7 @@
         <b>selectedList::</b>{{selectedList| json}}
     </div>
     <script>
-    angular.module('app', ['addRemove'])
+    angular.module('app', ['ngListSelect'])
     .controller('MainCtrl', function($scope) {
           $scope.availableList = [{name: "Nidhish", email: "nidhish@gmail.com"},
                                   {name: "John", email: "john@gmail.com"}, 
