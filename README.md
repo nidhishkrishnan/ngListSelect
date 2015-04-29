@@ -47,7 +47,7 @@ Use the below syntax in your templates:
 ### Blue
 ![blue](https://cloud.githubusercontent.com/assets/6831336/7219781/2b318974-e6ce-11e4-9e7c-81ad3a691c83.png)
 
-Take a look at this [Demo](http://plnkr.co/edit/n3s0ThH5ucTpNkFBwepW?p=preview) 
+Take a look at this [Demo](http://plnkr.co/edit/W3agWx?p=preview) 
 
 ## Thinking how to Customize, It's Easy!!!
 
@@ -86,11 +86,11 @@ You can customize the styles of ngListSelect component very easily like as follo
 ### Ghost
 ![ghost](https://cloud.githubusercontent.com/assets/6831336/7219916/9659948a-e6d3-11e4-8647-2b19ced07cf4.png)
 
-Take a look at this [Working Demo](http://plnkr.co/edit/cU1efOxfqmJ26TOrye1A?p=preview)
+Take a look at this [Working Demo](http://plnkr.co/edit/uUgARV?p=preview)
 
 ## Want to use it inside a modal popup
 
-* Take a look this [Demo](http://embed.plnkr.co/Lw8lAS2NwQMDQgHjYBEo/preview)
+* Take a look this [Demo](http://embed.plnkr.co/9sviu1/preview)
 
 ## Attributes
 
@@ -158,10 +158,10 @@ Take a look at this [Working Demo](http://plnkr.co/edit/cU1efOxfqmJ26TOrye1A?p=p
 
 ## Working Demo
 
-* ngListSelect Demo :[Demo](http://embed.plnkr.co/EowRjzQgceIQMYUEs87M/) 
-* ngListSelect Five Flavours - [Demo](http://embed.plnkr.co/n3s0ThH5ucTpNkFBwepW/)
-* ngListSelect Custom ```ghost``` Theme - [Demo](http://embed.plnkr.co/cU1efOxfqmJ26TOrye1A/)
-* ngListSelect in modal popup - [Demo](http://embed.plnkr.co/Lw8lAS2NwQMDQgHjYBEo/preview)
+* ngListSelect Demo :[Demo](http://embed.plnkr.co/W3agWx/preview) 
+* ngListSelect Five Flavours - [Demo](http://embed.plnkr.co/W3agWx/preview)
+* ngListSelect Custom ```ghost``` Theme - [Demo](http://embed.plnkr.co/uUgARV/preview)
+* ngListSelect in modal popup - [Demo](http://embed.plnkr.co/9sviu1/preview)
 
 ## License
 
