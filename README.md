@@ -27,11 +27,11 @@ You can download the minified and unminified version manually from CDN
 Adding `ngListSelect` Dependency to your app
 ```
 // Add ngListSelect as a dependency to your app
-angular.module('your-app', ['addRemove']);
+angular.module('your-app', ['ngListSelect']);
 ```
 Use the below syntax in your templates:
 ```
- <ng-add-remove selected-list="selectedList" width="700px" key="name" available-list="availableList" button-style="olive" panel-style="olive"></ng-add-remove>
+ <ng-list-select selected-list="selectedList" width="700px" key="name" available-list="availableList" button-style="olive" panel-style="olive"></ng-list-select>
 ```
 
 ## Five Built-In Flavours
@@ -51,7 +51,7 @@ Take a look at this [Demo](http://plnkr.co/edit/n3s0ThH5ucTpNkFBwepW?p=preview)
 
 ## Thinking how to Customize, It's Easy!!!
 
-You can customize the styles of add-remove component very easily like as follows:
+You can customize the styles of ngListSelect component very easily like as follows:
 
 * Since we are using Bootstrap v3.0+ css for styling purpose, for customising simply go to  [http://charliepark.org/](http://charliepark.org/bootstrap_buttons/)
 * Generate your suitable style.
@@ -81,7 +81,7 @@ You can customize the styles of add-remove component very easily like as follows
 ```
 * Use the ```ghost``` theme in template like as shown below
  
-```<ng-add-remove button-style="ghost" panel-style="ghost" selected-list="selectedList" width="700px" key="name" available-list="availableList"></ng-add-remove>``` 
+```<ng-list-select button-style="ghost" panel-style="ghost" selected-list="selectedList" width="700px" key="name" available-list="availableList"></ng-list-select>``` 
 
 ### Ghost
 ![ghost](https://cloud.githubusercontent.com/assets/6831336/7219916/9659948a-e6d3-11e4-8647-2b19ced07cf4.png)
@@ -100,7 +100,7 @@ Take a look at this [Working Demo](http://plnkr.co/edit/cU1efOxfqmJ26TOrye1A?p=p
 * Should not be empty.
 * Supports two way binding.
 * Should be detoted as ```available-list```.
-* Example for availableList : ```<ng-add-remove available-list="yourAvailableList"... ```.
+* Example for availableList : ```<ng-list-select available-list="yourAvailableList"... ```.
 
 #### selectedList (required)
 * Accepts **Array of String** as well as **Array of Objects**, but supports either one, which should be matched to ```availableList```, eg. ```["Apple, Orange"]``` or ```[{name: "Apple"...}, {name: "Orange"...}]```.
@@ -108,53 +108,53 @@ Take a look at this [Working Demo](http://plnkr.co/edit/cU1efOxfqmJ26TOrye1A?p=p
 * Can be empty.
 * Supports two way binding.
 * Should be detoted as ```selected-list```.
-* Example for selectedList : ```<ng-add-remove selected-list="yourSelectedList"... ```.
+* Example for selectedList : ```<ng-list-select selected-list="yourSelectedList"... ```.
 
 
 #### key (optional)
 * Accepts String value, eg. ```name```.
 * In the case if user is using **Array of Objects** in ```selectedList```, then the appropriate key should be mentioned to display its values. eg. if it is ```[{name: "Apple"...}, {name: "Orange"...}]``` then if ```"name"``` is given as key value, then it will shows ```Apple```, ```Orange``` within the box.
-* Example for key : ```<ng-add-remove selected-list="yourSelectedList" key="yourKey"... ```.
+* Example for key : ```<ng-list-select selected-list="yourSelectedList" key="yourKey"... ```.
 
 #### buttonStyle (optional)
 * Accepts string value, eg. ```"olive"```, ```"red"```.
 * Used for customizing the styles of buttons, user can pass the customized css class or in-built style values for ```buttonStyle``` to style the buttons.
 * Should be detoted as ```button-style```.
 * Has five built-in styles (```pearl, blue, alpha, sand, olive```), ```alpha``` is the default style.
-* Example for buttonStyle : ```<ng-add-remove button-style="alpha"... ```.
+* Example for buttonStyle : ```<ng-list-select button-style="alpha"... ```.
 
 #### panelStyle (optional)
 * Accepts string value, eg. ```"olive"```, ```"red"```.
 * Used for customizing the styles of panel boxes (**Available** and **Selected**), user can pass the customized css class or in-built style values for ```panelStyle``` to style the panels.
 * Should be detoted as ```panel-style```.
 * Has five built-in styles (```pearl, blue, alpha, sand, olive```), ```alpha``` is the default style.
-* Example for panelStyle : ```<ng-add-remove panel-style="alpha"... ```.
+* Example for panelStyle : ```<ng-list-select panel-style="alpha"... ```.
 
 #### width (optional)
 * Accepts string value, eg. ```"700px"```.
 * Used for changing the width of the ```add-remove``` component.
 * Default width is ```"144px"```.
-* Example for width : ```<ng-add-remove width="800px"... ```.
+* Example for width : ```<ng-list-select width="800px"... ```.
 
 #### height (optional)
 * Accepts string value, eg. ```"700px"```.
 * Used for changing the height of the ```add-remove``` component.
 * Default height is ```"80%"```.
-* Example for height : ```<ng-add-remove height="800px"... ```.
+* Example for height : ```<ng-list-select height="800px"... ```.
 
 #### availableLabel (optional)
 * Accepts string value, eg. ```"Available Peoples"```.
 * Used for changing the label of the **Available Box**.
 * Default label is ```"Available"```.
 * Should be detoted as ```available-label```.
-* Example for availableLabel : ```<ng-add-remove available-label="Available Peoples"... ```.
+* Example for availableLabel : ```<ng-list-select available-label="Available Peoples"... ```.
 
 #### selectedLabel (optional)
 * Accepts string value, eg. ```"Selected Peoples"```.
 * Used for changing the label of the **Selected Box**.
 * Default label is ```"Selected"```.
 * Should be detoted as ```selected-label```.
-* Example for selectedLabel : ```<ng-add-remove selected-label="Selected Peoples"... ```.
+* Example for selectedLabel : ```<ng-list-select selected-label="Selected Peoples"... ```.
 
 ## Working Demo
 
@@ -162,6 +162,10 @@ Take a look at this [Working Demo](http://plnkr.co/edit/cU1efOxfqmJ26TOrye1A?p=p
 * ngListSelect Five Flavours - [Demo](http://embed.plnkr.co/n3s0ThH5ucTpNkFBwepW/)
 * ngListSelect Custom ```ghost``` Theme - [Demo](http://embed.plnkr.co/cU1efOxfqmJ26TOrye1A/)
 * ngListSelect in modal popup - [Demo](http://embed.plnkr.co/Lw8lAS2NwQMDQgHjYBEo/preview)
+
+## License
+
+MIT
 
 ## Contributions
 
