@@ -2,7 +2,7 @@
 <html lang="en-us">
   <head>
     <meta charset="UTF-8">
-    <title>ngAddRemove by nidhishkrishnan</title>
+    <title>ngListSelect by nidhishkrishnan</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
@@ -11,22 +11,22 @@
   </head>
   <body>
     <section class="page-header">
-      <h1 class="project-name">ngAddRemove</h1>
-      <h2 class="project-tagline">ngAddRemove - An Awesome AngularJS Bootstrap supported directive for add/remove functionality</h2>
-      <a href="https://github.com/nidhishkrishnan/ngAddRemove" class="btn">View on GitHub</a>
-      <a href="https://github.com/nidhishkrishnan/ngAddRemove/zipball/master" class="btn">Download .zip</a>
-      <a href="https://github.com/nidhishkrishnan/ngAddRemove/tarball/master" class="btn">Download .tar.gz</a>
+      <h1 class="project-name">ngListSelect</h1>
+      <h2 class="project-tagline">ngListSelect - An Awesome AngularJS Bootstrap supported directive for add/remove functionality</h2>
+      <a href="https://github.com/nidhishkrishnan/ngListSelect" class="btn">View on GitHub</a>
+      <a href="https://github.com/nidhishkrishnan/ngListSelect/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/nidhishkrishnan/ngListSelect/tarball/master" class="btn">Download .tar.gz</a>
     </section>
 
     <section class="main-content">
       <h1>
-<a id="ngaddremove---an-awesome-angularjs-bootstrap-supported-directive-for-addremove-functionality" class="anchor" href="#ngaddremove---an-awesome-angularjs-bootstrap-supported-directive-for-addremove-functionality" aria-hidden="true"><span class="octicon octicon-link"></span></a>ngAddRemove - An Awesome AngularJS Bootstrap supported directive for add/remove functionality</h1>
+<a id="nglistselect---an-awesome-angularjs-bootstrap-supported-directive-for-addremove-functionality" class="anchor" href="#nglistselect---an-awesome-angularjs-bootstrap-supported-directive-for-addremove-functionality" aria-hidden="true"><span class="octicon octicon-link"></span></a>ngListSelect - An Awesome AngularJS Bootstrap supported directive for add/remove functionality</h1>
 
 <h2>
 <a id="features" class="anchor" href="#features" aria-hidden="true"><span class="octicon octicon-link"></span></a>Features</h2>
 
 <ul>
-<li>ngAddRemove Component allows users to select items from a group of available list.</li>
+<li>ngListSelect Component allows users to select items from a group of available list.</li>
 <li>Supported both Array of String and Array of Objects.</li>
 <li>Selection of Items can be either through buttons or item double click.</li>
 <li>Supports Ordering of Items under the Selection Block.</li>
@@ -50,19 +50,19 @@
 
 <p>You can download the minified and unminified version manually from CDN</p>
 
-<pre><code>&lt;script type="text/javascript" src="https://cdn.rawgit.com/nidhishkrishnan/ngAddRemove/master/ngAddRemove.min.js"&gt;&lt;/script&gt;
-&lt;script type="text/javascript" src="https://cdn.rawgit.com/nidhishkrishnan/ngAddRemove/master/ngAddRemove.js"&gt;&lt;/script&gt;
+<pre><code>&lt;script type="text/javascript" src="https://cdn.rawgit.com/nidhishkrishnan/ngListSelect/master/ngListSelect.min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="https://cdn.rawgit.com/nidhishkrishnan/ngListSelect/master/ngListSelect.js"&gt;&lt;/script&gt;
 </code></pre>
 
-<p>Adding <code>ngAddRemove</code> Dependency to your app</p>
+<p>Adding <code>ngListSelect</code> Dependency to your app</p>
 
-<pre><code>// Add ngAddRemove as a dependency to your app
-angular.module('your-app', ['addRemove']);
+<pre><code>// Add ngListSelect as a dependency to your app
+angular.module('your-app', ['ngListSelect']);
 </code></pre>
 
 <p>Use the below syntax in your templates:</p>
 
-<pre><code> &lt;ng-add-remove selected-list="selectedList" width="700px" key="name" available-list="availableList" button-style="olive" panel-style="olive"&gt;&lt;/ng-add-remove&gt;
+<pre><code> &lt;ng-list-select selected-list="selectedList" width="700px" key="name" available-list="availableList" button-style="olive" panel-style="olive"&gt;&lt;/ng-list-select&gt;
 </code></pre>
 
 <h2>
@@ -93,12 +93,12 @@ angular.module('your-app', ['addRemove']);
 
 <p><img src="https://cloud.githubusercontent.com/assets/6831336/7219781/2b318974-e6ce-11e4-9e7c-81ad3a691c83.png" alt="blue"></p>
 
-<p>Take a look at this <a href="http://plnkr.co/edit/n3s0ThH5ucTpNkFBwepW?p=preview">Demo</a> </p>
+<p>Take a look at this <a href="http://plnkr.co/edit/W3agWx?p=preview">Demo</a> </p>
 
 <h2>
 <a id="thinking-how-to-customize-its-easy" class="anchor" href="#thinking-how-to-customize-its-easy" aria-hidden="true"><span class="octicon octicon-link"></span></a>Thinking how to Customize, It's Easy!!!</h2>
 
-<p>You can customize the styles of add-remove component very easily like as follows:</p>
+<p>You can customize the styles of ngListSelect component very easily like as follows:</p>
 
 <ul>
 <li>Since we are using Bootstrap v3.0+ css for styling purpose, for customising simply go to  <a href="http://charliepark.org/bootstrap_buttons/">http://charliepark.org/</a>
@@ -133,20 +133,20 @@ angular.module('your-app', ['addRemove']);
 <li>Use the <code>ghost</code> theme in template like as shown below</li>
 </ul>
 
-<p><code>&lt;ng-add-remove button-style="ghost" panel-style="ghost" selected-list="selectedList" width="700px" key="name" available-list="availableList"&gt;&lt;/ng-add-remove&gt;</code> </p>
+<p><code>&lt;ng-list-select button-style="ghost" panel-style="ghost" selected-list="selectedList" width="700px" key="name" available-list="availableList"&gt;&lt;/ng-list-select&gt;</code> </p>
 
 <h3>
 <a id="ghost" class="anchor" href="#ghost" aria-hidden="true"><span class="octicon octicon-link"></span></a>Ghost</h3>
 
 <p><img src="https://cloud.githubusercontent.com/assets/6831336/7219916/9659948a-e6d3-11e4-8647-2b19ced07cf4.png" alt="ghost"></p>
 
-<p>Take a look at this <a href="http://plnkr.co/edit/cU1efOxfqmJ26TOrye1A?p=preview">Working Demo</a></p>
+<p>Take a look at this <a href="http://plnkr.co/edit/uUgARV?p=preview">Working Demo</a></p>
 
 <h2>
 <a id="want-to-use-it-inside-a-modal-popup" class="anchor" href="#want-to-use-it-inside-a-modal-popup" aria-hidden="true"><span class="octicon octicon-link"></span></a>Want to use it inside a modal popup</h2>
 
 <ul>
-<li>Take a look this <a href="http://embed.plnkr.co/Lw8lAS2NwQMDQgHjYBEo/preview">Demo</a>
+<li>Take a look this <a href="http://embed.plnkr.co/9sviu1/preview">Demo</a>
 </li>
 </ul>
 
@@ -162,7 +162,7 @@ angular.module('your-app', ['addRemove']);
 <li>Should not be empty.</li>
 <li>Supports two way binding.</li>
 <li>Should be detoted as <code>available-list</code>.</li>
-<li>Example for availableList : <code>&lt;ng-add-remove available-list="yourAvailableList"...</code>.</li>
+<li>Example for availableList : <code>&lt;ng-list-select available-list="yourAvailableList"...</code>.</li>
 </ul>
 
 <h4>
@@ -174,7 +174,7 @@ angular.module('your-app', ['addRemove']);
 <li>Can be empty.</li>
 <li>Supports two way binding.</li>
 <li>Should be detoted as <code>selected-list</code>.</li>
-<li>Example for selectedList : <code>&lt;ng-add-remove selected-list="yourSelectedList"...</code>.</li>
+<li>Example for selectedList : <code>&lt;ng-list-select selected-list="yourSelectedList"...</code>.</li>
 </ul>
 
 <h4>
@@ -183,7 +183,7 @@ angular.module('your-app', ['addRemove']);
 <ul>
 <li>Accepts String value, eg. <code>name</code>.</li>
 <li>In the case if user is using <strong>Array of Objects</strong> in <code>selectedList</code>, then the appropriate key should be mentioned to display its values. eg. if it is <code>[{name: "Apple"...}, {name: "Orange"...}]</code> then if <code>"name"</code> is given as key value, then it will shows <code>Apple</code>, <code>Orange</code> within the box.</li>
-<li>Example for key : <code>&lt;ng-add-remove selected-list="yourSelectedList" key="yourKey"...</code>.</li>
+<li>Example for key : <code>&lt;ng-list-select selected-list="yourSelectedList" key="yourKey"...</code>.</li>
 </ul>
 
 <h4>
@@ -194,7 +194,7 @@ angular.module('your-app', ['addRemove']);
 <li>Used for customizing the styles of buttons, user can pass the customized css class or in-built style values for <code>buttonStyle</code> to style the buttons.</li>
 <li>Should be detoted as <code>button-style</code>.</li>
 <li>Has five built-in styles (<code>pearl, blue, alpha, sand, olive</code>), <code>alpha</code> is the default style.</li>
-<li>Example for buttonStyle : <code>&lt;ng-add-remove button-style="alpha"...</code>.</li>
+<li>Example for buttonStyle : <code>&lt;ng-list-select button-style="alpha"...</code>.</li>
 </ul>
 
 <h4>
@@ -205,7 +205,7 @@ angular.module('your-app', ['addRemove']);
 <li>Used for customizing the styles of panel boxes (<strong>Available</strong> and <strong>Selected</strong>), user can pass the customized css class or in-built style values for <code>panelStyle</code> to style the panels.</li>
 <li>Should be detoted as <code>panel-style</code>.</li>
 <li>Has five built-in styles (<code>pearl, blue, alpha, sand, olive</code>), <code>alpha</code> is the default style.</li>
-<li>Example for panelStyle : <code>&lt;ng-add-remove panel-style="alpha"...</code>.</li>
+<li>Example for panelStyle : <code>&lt;ng-list-select panel-style="alpha"...</code>.</li>
 </ul>
 
 <h4>
@@ -213,9 +213,9 @@ angular.module('your-app', ['addRemove']);
 
 <ul>
 <li>Accepts string value, eg. <code>"700px"</code>.</li>
-<li>Used for changing the width of the <code>add-remove</code> component.</li>
+<li>Used for changing the width of the <code>ng-list-select</code> component.</li>
 <li>Default width is <code>"144px"</code>.</li>
-<li>Example for width : <code>&lt;ng-add-remove width="800px"...</code>.</li>
+<li>Example for width : <code>&lt;ng-list-select width="800px"...</code>.</li>
 </ul>
 
 <h4>
@@ -223,9 +223,9 @@ angular.module('your-app', ['addRemove']);
 
 <ul>
 <li>Accepts string value, eg. <code>"700px"</code>.</li>
-<li>Used for changing the height of the <code>add-remove</code> component.</li>
+<li>Used for changing the height of the <code>ng-list-select</code> component.</li>
 <li>Default height is <code>"80%"</code>.</li>
-<li>Example for height : <code>&lt;ng-add-remove height="800px"...</code>.</li>
+<li>Example for height : <code>&lt;ng-list-select height="800px"...</code>.</li>
 </ul>
 
 <h4>
@@ -236,7 +236,7 @@ angular.module('your-app', ['addRemove']);
 <li>Used for changing the label of the <strong>Available Box</strong>.</li>
 <li>Default label is <code>"Available"</code>.</li>
 <li>Should be detoted as <code>available-label</code>.</li>
-<li>Example for availableLabel : <code>&lt;ng-add-remove available-label="Available Peoples"...</code>.</li>
+<li>Example for availableLabel : <code>&lt;ng-list-select available-label="Available Peoples"...</code>.</li>
 </ul>
 
 <h4>
@@ -247,21 +247,26 @@ angular.module('your-app', ['addRemove']);
 <li>Used for changing the label of the <strong>Selected Box</strong>.</li>
 <li>Default label is <code>"Selected"</code>.</li>
 <li>Should be detoted as <code>selected-label</code>.</li>
-<li>Example for selectedLabel : <code>&lt;ng-add-remove selected-label="Selected Peoples"...</code>.</li>
+<li>Example for selectedLabel : <code>&lt;ng-list-select selected-label="Selected Peoples"...</code>.</li>
 </ul>
 
 <h2>
 <a id="working-demo" class="anchor" href="#working-demo" aria-hidden="true"><span class="octicon octicon-link"></span></a>Working Demo</h2>
 
 <ul>
-<li>ngAddRemove Demo :<a href="http://embed.plnkr.co/EowRjzQgceIQMYUEs87M/">Demo</a> </li>
-<li>ngAddRemove Five Flavours - <a href="http://embed.plnkr.co/n3s0ThH5ucTpNkFBwepW/">Demo</a>
+<li>ngListSelect Demo :<a href="http://embed.plnkr.co/Ert7SV/preview">Demo</a> </li>
+<li>ngListSelect Five Flavours - <a href="http://embed.plnkr.co/W3agWx/preview">Demo</a>
 </li>
-<li>ngAddRemove Custom <code>ghost</code> Theme - <a href="http://embed.plnkr.co/cU1efOxfqmJ26TOrye1A/">Demo</a>
+<li>ngListSelect Custom <code>ghost</code> Theme - <a href="http://embed.plnkr.co/uUgARV/preview">Demo</a>
 </li>
-<li>ngAddRemove in modal popup - <a href="http://embed.plnkr.co/Lw8lAS2NwQMDQgHjYBEo/preview">Demo</a>
+<li>ngListSelect in modal popup - <a href="http://embed.plnkr.co/9sviu1/preview">Demo</a>
 </li>
 </ul>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>MIT</p>
 
 <h2>
 <a id="contributions" class="anchor" href="#contributions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Contributions</h2>
@@ -269,7 +274,7 @@ angular.module('your-app', ['addRemove']);
 <p>Contributions are very welcome! Please contact me to discuss: <a href="mailto:nidhishkrishnan@gmail.com">nidhishkrishnan@gmail.com</a></p>
 
       <footer class="site-footer">
-        <span class="site-footer-owner"><a href="https://github.com/nidhishkrishnan/ngAddRemove">ngAddRemove</a> is maintained by <a href="https://github.com/nidhishkrishnan">nidhishkrishnan</a>.</span>
+        <span class="site-footer-owner"><a href="https://github.com/nidhishkrishnan/ngListSelect">ngListSelect</a> is maintained by <a href="https://github.com/nidhishkrishnan">nidhishkrishnan</a>.</span>
 
         <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
       </footer>
