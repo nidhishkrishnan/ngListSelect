@@ -1,10 +1,10 @@
 (function(window, angular, undefined) {
   'use strict';
-  angular.module('addRemove', [])
+  angular.module('ngListSelect', [])
     .run(['$templateCache',
       function($templateCache) {
         var addRemoveHtml =
-          "<div class='ngAddRemove container' style='margin-left: 0;' ng-style='containerStyle'>" +
+          "<div class='ngListSelect container' style='margin-left: 0;' ng-style='containerStyle'>" +
           "<div style='float:left; width:40%'>" +
           "<div ng-style='panelCssStyle' ng-class='panelClass' class='panel'>" +
           "<div class='panel-heading' ng-style='panelCssStyle' ng-class='panelClass'><b><span ng-bind='availableText'></span></b></div>" +
@@ -41,11 +41,11 @@
           "</div>" +
           "</div>" +
           "</div>";
-        $templateCache.put("addRemove.html", addRemoveHtml);
+        $templateCache.put("ngListSelect.html", addRemoveHtml);
       }
     ])
 
-  .directive('ngAddRemove', ['$filter',
+  .directive('ngListSelect', ['$filter',
     function($filter) {
       return {
         restrict: 'E',
@@ -61,7 +61,7 @@
           availableLabel: "@availableLabel",
           selectedLabel: "@selectedLabel"
         },
-        templateUrl: 'addRemove.html',
+        templateUrl: 'ngListSelect.html',
         compile: function(tElem, tAttrs) {
           return {
             pre: function(scope, iElem, iAttrs) {
