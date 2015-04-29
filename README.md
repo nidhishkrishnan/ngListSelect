@@ -132,13 +132,13 @@ Take a look at this [Working Demo](http://plnkr.co/edit/cU1efOxfqmJ26TOrye1A?p=p
 
 #### width (optional)
 * Accepts string value, eg. ```"700px"```.
-* Used for changing the width of the ```add-remove``` component.
+* Used for changing the width of the ```ng-list-select``` component.
 * Default width is ```"144px"```.
 * Example for width : ```<ng-list-select width="800px"... ```.
 
 #### height (optional)
 * Accepts string value, eg. ```"700px"```.
-* Used for changing the height of the ```add-remove``` component.
+* Used for changing the height of the ```ng-list-select``` component.
 * Default height is ```"80%"```.
 * Example for height : ```<ng-list-select height="800px"... ```.
 
