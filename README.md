@@ -20,7 +20,10 @@
 
 ##How do I add this to my project?
 
-You can download the minified and unminified version manually from CDN
+You can download this by:
+
+ - Using bower and running ```bower install ngListSelect```
+ - You can download the minified and unminified version manually from CDN
 ```
 <script type="text/javascript" src="https://cdn.rawgit.com/nidhishkrishnan/ngListSelect/master/ngListSelect.min.js"></script>
 <script type="text/javascript" src="https://cdn.rawgit.com/nidhishkrishnan/ngListSelect/master/ngListSelect.js"></script>
@@ -38,15 +41,15 @@ Use the below syntax in your templates:
 ## Five Built-In Flavours
 
 ### Alpha (Default)
-![alpha](https://cloud.githubusercontent.com/assets/6831336/7219787/3eba05c0-e6ce-11e4-876b-b296c17694f5.png)
+![alpha](https://cloud.githubusercontent.com/assets/6831336/7444516/0e199c88-f1a4-11e4-9c41-346b1822baa8.png)
 ### Sand
-![sand](https://cloud.githubusercontent.com/assets/6831336/7219776/e68dac58-e6cd-11e4-9435-bfdf4e6c5691.png)
+![sand](https://cloud.githubusercontent.com/assets/6831336/7444520/0e338d6e-f1a4-11e4-924c-4e1172ab7d5f.png)
 ### Olive
-![olive](https://cloud.githubusercontent.com/assets/6831336/7219778/fe47cb58-e6cd-11e4-8929-81b483b52c28.png)
+![olive](https://cloud.githubusercontent.com/assets/6831336/7444518/0e281790-f1a4-11e4-9ed9-b877fd796295.png)
 ### Pearl
-![pearl](https://cloud.githubusercontent.com/assets/6831336/7219780/12a4e8f6-e6ce-11e4-86e0-18e4d6b42946.png)
+![pearl](https://cloud.githubusercontent.com/assets/6831336/7444519/0e2dae94-f1a4-11e4-9ff3-932d71687569.png)
 ### Blue
-![blue](https://cloud.githubusercontent.com/assets/6831336/7219781/2b318974-e6ce-11e4-9e7c-81ad3a691c83.png)
+![blue](https://cloud.githubusercontent.com/assets/6831336/7444515/00ef8810-f1a4-11e4-97d5-f57c09f51a1c.png)
 
 Take a look at this [Demo](http://plnkr.co/edit/W3agWx?p=preview) 
 
@@ -85,7 +88,7 @@ You can customize the styles of ngListSelect component very easily like as follo
 ```<ng-list-select button-style="ghost" panel-style="ghost" selected-list="selectedList" key="name" available-list="availableList"></ng-list-select>``` 
 
 ### Ghost
-![ghost](https://cloud.githubusercontent.com/assets/6831336/7219916/9659948a-e6d3-11e4-8647-2b19ced07cf4.png)
+![ghost](https://cloud.githubusercontent.com/assets/6831336/7444541/b1a81442-f1a4-11e4-93e1-60001b71624a.png)
 
 Take a look at this [Working Demo](http://plnkr.co/edit/uUgARV?p=preview)
 
