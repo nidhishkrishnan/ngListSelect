@@ -9,6 +9,7 @@
 * Supported five Built-In Color.
 * Bootstrap supported.
 * Options for Styling Buttons and Panels.
+* Options for sorting selected list in ascedning and descending order.
 * Options for changing component width, height and labels of Available & Selection Box. 
 * Works in all modern browsers (IE9+, Chrome, Firefox, Safari etc.)
 
@@ -31,7 +32,7 @@ angular.module('your-app', ['ngListSelect']);
 ```
 Use the below syntax in your templates:
 ```
- <ng-list-select selected-list="selectedList" width="700px" key="name" available-list="availableList" button-style="olive" panel-style="olive"></ng-list-select>
+ <ng-list-select selected-list="selectedList" key="name" available-list="availableList" button-style="olive" panel-style="olive"></ng-list-select>
 ```
 
 ## Five Built-In Flavours
@@ -81,7 +82,7 @@ You can customize the styles of ngListSelect component very easily like as follo
 ```
 * Use the ```ghost``` theme in template like as shown below
  
-```<ng-list-select button-style="ghost" panel-style="ghost" selected-list="selectedList" width="700px" key="name" available-list="availableList"></ng-list-select>``` 
+```<ng-list-select button-style="ghost" panel-style="ghost" selected-list="selectedList" key="name" available-list="availableList"></ng-list-select>``` 
 
 ### Ghost
 ![ghost](https://cloud.githubusercontent.com/assets/6831336/7219916/9659948a-e6d3-11e4-8647-2b19ced07cf4.png)
@@ -133,7 +134,7 @@ Take a look at this [Working Demo](http://plnkr.co/edit/uUgARV?p=preview)
 #### width (optional)
 * Accepts string value, eg. ```"700px"```.
 * Used for changing the width of the ```ng-list-select``` component.
-* Default width is ```"144px"```.
+* Default width is ```"640px"```.
 * Example for width : ```<ng-list-select width="800px"... ```.
 
 #### height (optional)
