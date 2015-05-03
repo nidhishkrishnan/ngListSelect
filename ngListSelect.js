@@ -24,19 +24,23 @@
           "<br/>" +
           "<button ng-click='addAllItemsToLeft()' ng-class='buttonClass' ng-style='buttonCssStyle' class='btn' style='width:60px; height: 34px; line-height: 17px; vertical-align:middle;outline:none !important;margin-bottom:7px'><span style='font-size:30px;'>&#8647;</span>" +
           "</button>" +
-          "<br/>" +
+          "<br/>" + 
           "</div>" +
           "<div style='float: right; width: 40%'>" +
           "<div ng-style='panelCssStyle' ng-class='panelClass' class='panel'>" +
           "<div class='panel-heading' ng-style='panelCssStyle' ng-class='panelClass'><b><span ng-bind='selectedText'></span></b></div>" +
           "<select size='9' ng-style='dropdownStyle' style='width: 100%; vertical-align: top; color: black;' id='selectedlist' ng-model='rightMouseSelectedItems' ng-options='{{rightSelectNgOption}}' ng-dblclick='addItemsToLeft()' multiple></select>" +
           "</div>" +
-          "<div style='float: left; margin-left:20%;'>" +
-          "<button ng-click='addItemsToTop()' ng-class='buttonClass' ng-style='buttonCssStyle' class='btn' style='width:60px; height: 34px; line-height: 17px; vertical-align:middle;outline:none !important;margin-bottom:7px'><span style='font-size:25px;'>&#8593;</span>" +
+          "<div style='float: left; margin-left:13%;'>" + 
+          "<button ng-disabled='isSelectedOptionDisabled' ng-click='addItemsToTop()' ng-class='buttonClass' ng-style='buttonCssStyle' class='btn' style='width:60px; height: 34px; line-height: 17px; outline:none !important;margin-bottom:7px;'><span style='font-size:25px;'>&#8593;</span>" +
           "</button>" +
           "</div>" +
-          "<div style='float: right; margin-right:20%'>" +
-          "<button ng-click='addItemsToDown()' ng-class='buttonClass' ng-style='buttonCssStyle' class='btn' style='width:60px; height: 34px; line-height: 17px; vertical-align:middle;outline:none !important;margin-bottom:7px'><span style='font-size:25px;'>&#8595;</span>" +
+          "<div style='float: left; margin-left:5%;'>" + 
+          "<button ng-disabled='isSelectedOptionDisabled' ng-click='addItemsToDown()' ng-class='buttonClass' ng-style='buttonCssStyle' class='btn' style='width:60px; height: 34px; line-height: 17px; outline:none !important;margin-bottom:7px;'><span style='font-size:25px;'>&#8595;</span>" +
+          "</button>" +
+          "</div>" +
+          "<div style='float: left; margin-left:5%;'>" +
+          "<button ng-disabled='isSelectedOptionDisabled' title='Ascending/ Descending' ng-click='setAscendingDescendingOrder()' ng-class='buttonClass' ng-style='buttonCssStyle' class='btn' style='width:100%; height: 34px; line-height: 17px; outline:none !important;margin-bottom:7px;'><div ng-style='letterStyle.mainContainer'><span ng-style='letterStyle.letterDarkblue'>{{topLetter}}</span><span ng-style='letterStyle.letterCrimson'>{{bottomLetter}}</span></div><span ng-style='letterStyle.arrow'>&#8595;</span>" +
           "</button>" +
           "</div>" +
           "</div>" +
@@ -68,7 +72,7 @@
               scope.availableText = angular.isUndefined(scope.availableLabel) ? 'Available' : scope.availableLabel;
               scope.selectedText = angular.isUndefined(scope.selectedLabel) ? 'Selected' : scope.selectedLabel;
               scope.height = angular.isUndefined(scope.height) ? '144px' : scope.height;
-              scope.width = angular.isUndefined(scope.width) ? '80%' : scope.width;
+              scope.width = angular.isUndefined(scope.width) ? '640px' : scope.width;
               scope.buttonStyle = angular.isUndefined(scope.buttonStyle) ? 'alpha' : scope.buttonStyle;
               scope.buttonClass = getColor(scope.buttonStyle, 'button');
               scope.panelStyle = angular.isUndefined(scope.panelStyle) ? 'alpha' : scope.panelStyle;
@@ -81,12 +85,23 @@
               scope.containerStyle = {
                 width: scope.width
               };
+              scope.ascendingOrderFlag = true;
+              scope.topLetter = 'A';
+              scope.bottomLetter = 'Z';
+              scope.letterStyle = {
+                mainContainer:{"width":"10px","line-height":"9px"},
+                letter:{"font-size":"10px","float":"left","font-weight":"600","font-family":"sans-serif"},
+                letterCrimson:{"font-size":"10px","float":"left","font-weight":"600","font-family":"sans-serif", "color":"crimson"},
+                letterDarkblue:{"font-size":"10px","float":"left","font-weight":"600","font-family":"sans-serif", "color":"darkblue"}, 
+                arrow:{"font-weight":900,"font-size":"20px","line-height":"10px"}
+              }; 
 
               if (scope.availableListItems[0] instanceof Object) {
                 scope.leftSelectNgOption = "item as item." + scope.key + " for item in availableListItems | orderBy:'" + scope.key + "'";
                 scope.rightSelectNgOption = "item as item." + scope.key + " for item  in selectedListItems";
                 scope.availableListItems = getUnique(scope.availableListItems, scope.key);
-              } else {
+              } 
+              else {
                 scope.leftSelectNgOption = "item as item for item in availableListItems | orderBy:'toString()'";
                 scope.rightSelectNgOption = "item as item for item in selectedListItems";
                 scope.availableListItems = getUnique(scope.availableListItems);
@@ -143,23 +158,51 @@
               function orderSelections() {
                 if (scope.selectedListItems[0] instanceof Object) {
                   scope.selectedListItems = $filter('orderBy')(scope.selectedListItems, scope.key);
-                } else {
+                } 
+                else {
                   scope.selectedListItems = $filter('orderBy')(scope.selectedListItems, 'toString()');
                 }
+              } 
+
+              scope.setAscendingDescendingOrder = function() {
+                if(scope.ascendingOrderFlag) {
+                  scope.topLetter = 'Z';
+                  scope.bottomLetter = 'A';
+                  scope.ascendingOrderFlag = false;
+                  if (scope.selectedListItems[0] instanceof Object) {
+                    scope.selectedListItems = setOrdering(scope.key, true);
+                  }
+                  else { 
+                    scope.selectedListItems = setOrdering('toString()', true);
+                  }
+                }
+                else { 
+                  scope.topLetter = 'A';
+                  scope.bottomLetter = 'Z';
+                  scope.ascendingOrderFlag = true;
+                  if (scope.selectedListItems[0] instanceof Object) {
+                    scope.selectedListItems = setOrdering(scope.key, false);
+                  }
+                  else { 
+                    scope.selectedListItems = setOrdering('toString()', false);
+                  }
+                }
+              };
+              
+              function setOrdering(orderVariable, reverse) {
+                return $filter('orderBy')(scope.selectedListItems, orderVariable, reverse);
               }
 
               scope.addItemsToRight = function() {
                 angular.forEach(scope.leftMouseSelectedItems, function(leftMouseSelectedItem, key) {
                   scope.selectedListItems.push(leftMouseSelectedItem);
-                });
-                angular.forEach(scope.leftMouseSelectedItems, function(leftMouseSelectedItem, key) {
                   angular.forEach(scope.availableListItems, function(availableListItem, index) {
                     if (scope.availableListItems[0] instanceof Object) {
-                      if (availableListItem[scope.key] == leftMouseSelectedItem[scope.key]) {
+                      if (availableListItem[scope.key] === leftMouseSelectedItem[scope.key]) {
                         scope.availableListItems.splice(index, 1);
                       }
                     } else {
-                      if (availableListItem == leftMouseSelectedItem) {
+                      if (availableListItem === leftMouseSelectedItem) {
                         scope.availableListItems.splice(index, 1);
                       }
                     }
@@ -167,6 +210,7 @@
                 });
                 scope.leftMouseSelectedItems = [];
                 orderSelections();
+                setSelectedOptionDisabledEnabled();
               };
 
               scope.addAllItemsToRight = function() {
@@ -176,26 +220,26 @@
                 scope.availableListItems = [];
                 scope.leftMouseSelectedItems = [];
                 orderSelections();
+                setSelectedOptionDisabledEnabled();
               };
 
               scope.addItemsToLeft = function() {
                 angular.forEach(scope.rightMouseSelectedItems, function(rightMouseSelectedItem, key) {
                   scope.availableListItems.push(rightMouseSelectedItem);
-                });
-                angular.forEach(scope.rightMouseSelectedItems, function(rightMouseSelectedItem, key) {
                   angular.forEach(scope.selectedListItems, function(selectedListItem, index) {
                     if (scope.availableListItems[0] instanceof Object) {
-                      if (selectedListItem[scope.key] == rightMouseSelectedItem[scope.key]) {
+                      if (selectedListItem[scope.key] === rightMouseSelectedItem[scope.key]) {
                         scope.selectedListItems.splice(index, 1);
                       }
                     } else {
-                      if (selectedListItem == rightMouseSelectedItem) {
+                      if (selectedListItem === rightMouseSelectedItem) {
                         scope.selectedListItems.splice(index, 1);
                       }
                     }
                   });
                 });
                 scope.rightMouseSelectedItems = [];
+                setSelectedOptionDisabledEnabled();
               };
 
               scope.addAllItemsToLeft = function() {
@@ -204,7 +248,12 @@
                 });
                 scope.selectedListItems = [];
                 scope.rightMouseSelectedItems = [];
+                setSelectedOptionDisabledEnabled();
               };
+              
+              function setSelectedOptionDisabledEnabled() {
+                scope.isSelectedOptionDisabled = scope.selectedListItems.length<=0;
+              }
 
               scope.addItemsToTop = function() {
                 var prevIndex = -1;
@@ -231,6 +280,7 @@
                   }
                 });
               };
+              setSelectedOptionDisabledEnabled();
             }
           };
         }
