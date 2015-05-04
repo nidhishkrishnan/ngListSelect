@@ -33,6 +33,7 @@
 <li>Supported five Built-In Color.</li>
 <li>Bootstrap supported.</li>
 <li>Options for Styling Buttons and Panels.</li>
+<li>Options for sorting selected list in ascedning and descending order.</li>
 <li>Options for changing component width, height and labels of Available &amp; Selection Box. </li>
 <li>Works in all modern browsers (IE9+, Chrome, Firefox, Safari etc.)</li>
 </ul>
@@ -48,7 +49,13 @@
 <h2>
 <a id="how-do-i-add-this-to-my-project" class="anchor" href="#how-do-i-add-this-to-my-project" aria-hidden="true"><span class="octicon octicon-link"></span></a>How do I add this to my project?</h2>
 
-<p>You can download the minified and unminified version manually from CDN</p>
+<p>You can download this by:</p>
+
+<ul>
+<li>Using bower and running <code>bower install ngListSelect</code>
+</li>
+<li>You can download the minified and unminified version manually from CDN</li>
+</ul>
 
 <pre><code>&lt;script type="text/javascript" src="https://cdn.rawgit.com/nidhishkrishnan/ngListSelect/master/ngListSelect.min.js"&gt;&lt;/script&gt;
 &lt;script type="text/javascript" src="https://cdn.rawgit.com/nidhishkrishnan/ngListSelect/master/ngListSelect.js"&gt;&lt;/script&gt;
@@ -62,7 +69,7 @@ angular.module('your-app', ['ngListSelect']);
 
 <p>Use the below syntax in your templates:</p>
 
-<pre><code> &lt;ng-list-select selected-list="selectedList" width="700px" key="name" available-list="availableList" button-style="olive" panel-style="olive"&gt;&lt;/ng-list-select&gt;
+<pre><code> &lt;ng-list-select selected-list="selectedList" key="name" available-list="availableList" button-style="olive" panel-style="olive"&gt;&lt;/ng-list-select&gt;
 </code></pre>
 
 <h2>
@@ -71,27 +78,27 @@ angular.module('your-app', ['ngListSelect']);
 <h3>
 <a id="alpha-default" class="anchor" href="#alpha-default" aria-hidden="true"><span class="octicon octicon-link"></span></a>Alpha (Default)</h3>
 
-<p><img src="https://cloud.githubusercontent.com/assets/6831336/7219787/3eba05c0-e6ce-11e4-876b-b296c17694f5.png" alt="alpha"></p>
+<p><img src="https://cloud.githubusercontent.com/assets/6831336/7444516/0e199c88-f1a4-11e4-9c41-346b1822baa8.png" alt="alpha"></p>
 
 <h3>
 <a id="sand" class="anchor" href="#sand" aria-hidden="true"><span class="octicon octicon-link"></span></a>Sand</h3>
 
-<p><img src="https://cloud.githubusercontent.com/assets/6831336/7219776/e68dac58-e6cd-11e4-9435-bfdf4e6c5691.png" alt="sand"></p>
+<p><img src="https://cloud.githubusercontent.com/assets/6831336/7444520/0e338d6e-f1a4-11e4-924c-4e1172ab7d5f.png" alt="sand"></p>
 
 <h3>
 <a id="olive" class="anchor" href="#olive" aria-hidden="true"><span class="octicon octicon-link"></span></a>Olive</h3>
 
-<p><img src="https://cloud.githubusercontent.com/assets/6831336/7219778/fe47cb58-e6cd-11e4-8929-81b483b52c28.png" alt="olive"></p>
+<p><img src="https://cloud.githubusercontent.com/assets/6831336/7444518/0e281790-f1a4-11e4-9ed9-b877fd796295.png" alt="olive"></p>
 
 <h3>
 <a id="pearl" class="anchor" href="#pearl" aria-hidden="true"><span class="octicon octicon-link"></span></a>Pearl</h3>
 
-<p><img src="https://cloud.githubusercontent.com/assets/6831336/7219780/12a4e8f6-e6ce-11e4-86e0-18e4d6b42946.png" alt="pearl"></p>
+<p><img src="https://cloud.githubusercontent.com/assets/6831336/7444519/0e2dae94-f1a4-11e4-9ff3-932d71687569.png" alt="pearl"></p>
 
 <h3>
 <a id="blue" class="anchor" href="#blue" aria-hidden="true"><span class="octicon octicon-link"></span></a>Blue</h3>
 
-<p><img src="https://cloud.githubusercontent.com/assets/6831336/7219781/2b318974-e6ce-11e4-9e7c-81ad3a691c83.png" alt="blue"></p>
+<p><img src="https://cloud.githubusercontent.com/assets/6831336/7444515/00ef8810-f1a4-11e4-97d5-f57c09f51a1c.png" alt="blue"></p>
 
 <p>Take a look at this <a href="http://plnkr.co/edit/W3agWx?p=preview">Demo</a> </p>
 
@@ -133,12 +140,12 @@ angular.module('your-app', ['ngListSelect']);
 <li>Use the <code>ghost</code> theme in template like as shown below</li>
 </ul>
 
-<p><code>&lt;ng-list-select button-style="ghost" panel-style="ghost" selected-list="selectedList" width="700px" key="name" available-list="availableList"&gt;&lt;/ng-list-select&gt;</code> </p>
+<p><code>&lt;ng-list-select button-style="ghost" panel-style="ghost" selected-list="selectedList" key="name" available-list="availableList"&gt;&lt;/ng-list-select&gt;</code> </p>
 
 <h3>
 <a id="ghost" class="anchor" href="#ghost" aria-hidden="true"><span class="octicon octicon-link"></span></a>Ghost</h3>
 
-<p><img src="https://cloud.githubusercontent.com/assets/6831336/7219916/9659948a-e6d3-11e4-8647-2b19ced07cf4.png" alt="ghost"></p>
+<p><img src="https://cloud.githubusercontent.com/assets/6831336/7444541/b1a81442-f1a4-11e4-93e1-60001b71624a.png" alt="ghost"></p>
 
 <p>Take a look at this <a href="http://plnkr.co/edit/uUgARV?p=preview">Working Demo</a></p>
 
@@ -214,7 +221,7 @@ angular.module('your-app', ['ngListSelect']);
 <ul>
 <li>Accepts string value, eg. <code>"700px"</code>.</li>
 <li>Used for changing the width of the <code>ng-list-select</code> component.</li>
-<li>Default width is <code>"144px"</code>.</li>
+<li>Default width is <code>"640px"</code>.</li>
 <li>Example for width : <code>&lt;ng-list-select width="800px"...</code>.</li>
 </ul>
 
