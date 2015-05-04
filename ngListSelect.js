@@ -270,7 +270,7 @@
 
               scope.addItemsToDown = function() {
                 var prevIndex = scope.selectedListItems.length;
-                angular.forEach(scope.rightMouseSelectedItems.reverse(), function(rightMouseSelectedItem, key) {
+                angular.forEach(scope.rightMouseSelectedItems.concat().reverse(), function(rightMouseSelectedItem, key) {
                   var itemIndex = scope.selectedListItems.indexOf(rightMouseSelectedItem);
                   if (itemIndex + 1 === prevIndex) {
                     prevIndex = itemIndex;
