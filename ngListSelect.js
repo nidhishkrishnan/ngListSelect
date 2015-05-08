@@ -40,7 +40,7 @@
           "</button>" +
           "</div>" +
           "<div style='float: left; margin-left:5%;'>" +
-          "<button ng-disabled='isSelectedOptionDisabled' title='Ascending/ Descending' ng-click='setAscendingDescendingOrder()' ng-class='buttonClass' ng-style='buttonCssStyle' class='btn' style='width:100%; height: 34px; line-height: 17px; outline:none !important;margin-bottom:7px;'><div ng-style='letterStyle.mainContainer'><span ng-style='letterStyle.letterDarkblue'>{{topLetter}}</span><span ng-style='letterStyle.letterCrimson'>{{bottomLetter}}</span></div><span ng-style='letterStyle.arrow'>&#8595;</span>" +
+          "<button ng-disabled='isSelectedOptionDisabled' title='Ascending/ Descending' ng-click='setAscendingDescendingOrder()' ng-class='buttonClass' ng-style='buttonCssStyle' class='btn' style='padding-top: 0px; border-top-width: 1px; padding-bottom: 8px; width:100%; height: 34px; line-height: 17px; outline:none !important;margin-bottom:7px;'><div ng-style='letterStyle.mainContainer' style='position:relative'><div ng-style='letterStyle.letterDarkblue' style='position:absolute;top: -3px;'>{{topLetter}}</div><div ng-style='letterStyle.letterCrimson' style='position:absolute;padding-top: 10px; padding-bottom: 0px;'>{{bottomLetter}}</div><div ng-style='letterStyle.arrow' style='padding-left: 7px;'>&#8595;</div></div>" +
           "</button>" +
           "</div>" +
           "</div>" +
@@ -93,7 +93,7 @@
                 letter:{"font-size":"10px","float":"left","font-weight":"600","font-family":"sans-serif"},
                 letterCrimson:{"font-size":"10px","float":"left","font-weight":"600","font-family":"sans-serif", "color":"crimson"},
                 letterDarkblue:{"font-size":"10px","float":"left","font-weight":"600","font-family":"sans-serif", "color":"darkblue"}, 
-                arrow:{"font-weight":900,"font-size":"20px","line-height":"10px"}
+                arrow:{"font-size":"25px"}
               }; 
 
               if (scope.availableListItems[0] instanceof Object) {
