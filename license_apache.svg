@@ -1,12 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="92" height="20">
-     <linearGradient id="a" x2="0" y2="100%">
+    <linearGradient id="b" x2="0" y2="100%">
         <stop offset="0" stop-color="#bbb" stop-opacity=".1" />
         <stop offset="1" stop-opacity=".1" />
     </linearGradient>
-    <rect rx="3" width="90" height="20" fill="#555" />
-    <rect rx="3" x="37" width="90" height="20" fill="#4c1" />
-    <path fill="#4c1" d="M37 0h4v20h-4z" />
-    <rect rx="3" width="90" height="20" fill="url(#a)" />
+    <clipPath id="a">
+        <rect width="78" height="20" rx="3" fill="#fff" />
+    </clipPath>
+    <g clip-path="url(#a)">
+        <path fill="#555" d="M0 0h47v20H0z" />
+        <path fill="#97CA00" d="M53 0h84v20H53z"/>
+        <path fill="url(#b)" d="M0 0h78v20H0z" />
+    </g>
     <g fill="#fff" text-anchor="middle" font-family="DejaVu Sans,Verdana,Geneva,sans-serif" font-size="110">
         <text x="245" y="150" fill="#010101" fill-opacity=".3" transform="scale(.1)" textLength="370">license</text>
         <text x="245" y="140" transform="scale(.1)" textLength="370">license</text>
