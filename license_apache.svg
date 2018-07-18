@@ -4,7 +4,7 @@
         <stop offset="1" stop-opacity=".1" />
     </linearGradient>
     <clipPath id="a">
-        <rect width="92" height="20" rx="3" fill="#fff" />
+        <rect width="102" height="20" rx="3" fill="#fff" />
     </clipPath>
     <g clip-path="url(#a)">
         <path fill="#555" d="M0 0h47v20H0z" />
